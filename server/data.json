@@ -1,0 +1,230 @@
+{
+  "hot_search_word": [
+    {
+      "search_word": "辣鸭脖",
+      "title": "辣鸭脖"
+    },
+    {
+      "search_word": "韩国炸鸡",
+      "title": "韩国炸鸡"
+    },
+    {
+      "search_word": "我是一只鸡",
+      "title": "我是一只鸡"
+    },
+    {
+      "search_word": "脆皮鸡",
+      "title": "脆皮鸡"
+    },
+    {
+      "search_word": "麦当劳",
+      "title": "麦当劳"
+    },
+    {
+      "search_word": "老鸭粉丝",
+      "title": "老鸭粉丝"
+    },
+    {
+      "search_word": "牛排",
+      "title": "牛排"
+    },
+    {
+      "search_word": "黄焖鸡",
+      "title": "黄焖鸡"
+    },
+    {
+      "search_word": "铁板炒饭",
+      "title": "铁板炒饭"
+    },
+    {
+      "search_word": "麻辣香锅",
+      "title": "麻辣香锅"
+    },
+    {
+      "search_word": "煎饼",
+      "title": "煎饼"
+    }
+  ],
+  "sellers_simple": [
+    {
+      "id": "100001",
+      "name": "粥品香坊（回龙观）",
+      "brand": true,
+      "bao": true,
+      "piao": true,
+      "zhun": true,
+      "is_fengniao": true,
+      "description": "蜂鸟专送",
+      "deliveryTime": 38,
+      "score": 4.2,
+      "minPrice": 20,
+      "avgPrice": 19,
+      "deliveryPrice": 4,
+      "sellCount": 90,
+      "distance": 1.4,
+      "avatar": "http://static.galileo.xiaojukeji.com/static/tms/seller_avatar_256px.jpg"
+    },
+    {
+      "id": "100002",
+      "name": "眉州小吃（万柳店）",
+      "brand": true,
+      "bao": true,
+      "piao": true,
+      "zhun": true,
+      "is_fengniao": true,
+      "description": "蜂鸟专送",
+      "deliveryTime": 38,
+      "score": 4.9,
+      "minPrice": 25,
+      "avgPrice": 32,
+      "deliveryPrice": 4,
+      "sellCount": 90,
+      "distance": 730,
+      "avatar": "/static/images/sellers/logo-100002.jpg"
+    },
+    {
+      "id": "100003",
+      "name": "粉我新疆炒米粉 炒酸奶",
+      "brand": false,
+      "bao": true,
+      "piao": true,
+      "zhun": false,
+      "is_fengniao": false,
+      "description": "商家配送",
+      "deliveryTime": 38,
+      "score": 3.2,
+      "minPrice": 20,
+      "avgPrice": 20,
+      "deliveryPrice": 4,
+      "sellCount": 90,
+      "distance": 1500,
+      "avatar": "/static/images/sellers/logo-100003.png"
+    },
+    {
+      "id": "100004",
+      "name": "嘉和一品（万柳华联店）",
+      "brand": true,
+      "bao": true,
+      "piao": true,
+      "zhun": false,
+      "is_fengniao": true,
+      "description": "蜂鸟专送",
+      "deliveryTime": 27,
+      "score": 4.7,
+      "minPrice": 20,
+      "avgPrice": 20,
+      "deliveryPrice": 4,
+      "sellCount": 90,
+      "distance": 1500,
+      "avatar": "/static/images/sellers/logo-100004.jpeg"
+    },
+    {
+      "id": "100005",
+      "name": "焦耳川式快餐（华宇店）",
+      "brand": true,
+      "bao": true,
+      "piao": true,
+      "zhun": false,
+      "is_fengniao": false,
+      "description": "商家配送",
+      "deliveryTime": 27,
+      "score": 4.7,
+      "minPrice": 20,
+      "avgPrice": 20,
+      "deliveryPrice": 4,
+      "sellCount": 90,
+      "distance": 1500,
+      "avatar": "/static/images/sellers/logo-100005.jpeg"
+    },
+    {
+      "id": "100006",
+      "name": "汉拿山（金源店）",
+      "brand": true,
+      "bao": false,
+      "piao": true,
+      "zhun": true,
+      "is_fengniao": true,
+      "description": "蜂鸟专送",
+      "deliveryTime": 27,
+      "score": 4.7,
+      "minPrice": 20,
+      "avgPrice": 20,
+      "deliveryPrice": 4,
+      "sellCount": 90,
+      "distance": 1500,
+      "avatar": "/static/images/sellers/logo-100006.jpeg"
+    },
+    {
+      "id": "100007",
+      "name": "北京麦当劳万柳餐厅",
+      "brand": true,
+      "bao": true,
+      "piao": true,
+      "zhun": true,
+      "is_fengniao": false,
+      "description": "商家配送",
+      "deliveryTime": 27,
+      "score": 4.8,
+      "minPrice": 20,
+      "avgPrice": 20,
+      "deliveryPrice": 4,
+      "sellCount": 90,
+      "distance": 1500,
+      "avatar": "/static/images/sellers/logo-100007.png"
+    },
+    {
+      "id": "100008",
+      "name": "烧鹅仔-香肠公主（北外店）",
+      "brand": true,
+      "bao": true,
+      "piao": true,
+      "zhun": false,
+      "is_fengniao": false,
+      "description": "商家配送",
+      "deliveryTime": 40,
+      "score": 3.8,
+      "minPrice": 20,
+      "avgPrice": 20,
+      "deliveryPrice": 4,
+      "sellCount": 90,
+      "distance": 1500,
+      "avatar": "/static/images/sellers/logo-100008.jpeg"
+    },
+    {
+      "id": "100009",
+      "name": "优粮生活（中关村店）",
+      "brand": true,
+      "bao": true,
+      "piao": true,
+      "zhun": true,
+      "is_fengniao": true,
+      "description": "蜂鸟专送",
+      "deliveryTime": 27,
+      "score": 4.8,
+      "minPrice": 20,
+      "avgPrice": 20,
+      "deliveryPrice": 4,
+      "sellCount": 90,
+      "distance": 1500,
+      "avatar": "/static/images/sellers/logo-100009.jpeg"
+    },
+    {
+      "id": "100010",
+      "name": "田老师红烧肉（海淀金源时代店）",
+      "brand": true,
+      "bao": true,
+      "piao": false,
+      "zhun": true,
+      "is_fengniao": false,
+      "description": "商家配送",
+      "deliveryTime": 27,
+      "score": 4.7,
+      "minPrice": 25,
+      "avgPrice": 20,
+      "deliveryPrice": 4,
+      "sellCount": 90,
+      "distance": 1500,
+      "avatar": "/static/images/sellers/logo-100010.jpeg"
+    }
+  ]
+}

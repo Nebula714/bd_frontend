@@ -1,0 +1,144 @@
+.ratings{
+	position: absolute;
+	top: 4.84rem; // 363px
+  bottom: 0;
+  left: 0;
+  width: 100%;
+	background-color: #fff;
+	overflow: hidden;
+	.overview{
+		display: flex;
+		padding: 0.48rem 0;
+		.overview-left{
+			flex: 0 0 3.666667rem;
+			width: 3.666667rem;
+			text-align: center;
+			border-right: 1px solid rgba(7, 17, 27, 0.1);
+			.score{
+				font-size: 0.64rem;
+				color: #ff9900;
+				line-height: 0.746667rem;
+			}
+			.title{
+				line-height: 0.32rem;
+				margin-top: 0.16rem;
+				font-size: 0.32rem;
+				color: #07111b;
+			}
+			.rank{
+				margin-top: 0.213333rem;
+				line-height: 0.266667rem;
+				font-size: 0.266667rem;
+				color: #93999f;
+			}
+		}
+		.overview-right{
+			flex-grow: 1;
+			line-height: 0.48rem;
+			padding: 0.16rem 0 0.16rem 0.64rem;
+			.title{
+				display: inline-block;
+				font-size: 0.32rem;
+			}
+			.score-wrapper{
+				font-size: 0;
+				.star{
+					display: inline-block;
+					margin: 0 0.32rem;
+					vertical-align: middle;
+				}
+				.score{
+					font-size: 0.32rem;
+					color: #ff9900;
+					line-height: 0.48rem;
+				}
+			}
+			.delivery-wrapper{
+				font-size: 0;
+				.delivery{
+					margin-left: 0.32rem;
+					font-size: 0.32rem;
+					color: #93999f;
+				}
+			}
+		}
+	}
+	.rating-wrapper{
+		padding: 0 0.48rem;
+		background-color: #fff;
+		.rating-item{
+			display: flex;
+			position: relative;
+			padding: 0.48rem 0;
+			border-bottom: 0.013333rem solid rgba(7, 17, 27, 0.1);
+			.avatar{
+				flex: 0 0 0.746667rem;
+				width: 0.746667rem;
+				height: 0.746667rem;
+				img{
+					width: 100%;
+					border-radius: 50%;
+				}
+			}
+			.content{
+				flex: 1;
+				margin-left: 0.32rem;
+				.name{
+					line-height: 0.32rem;
+					margin-bottom: 0.106667rem;
+					font-size: 0.266667rem;
+					color: rgb(7, 17, 27);
+				}
+				.star-wrapper{
+					margin-bottom: 0.16rem;
+					font-size: 0;
+					.star{
+						display: inline-block;
+						margin-right: 0.16rem;
+					}
+					.delivery{
+						display: inline-block;
+						vertical-align: top;
+						line-height: 0.32rem;
+						font-weight: 200;
+						font-size: 0.266667rem;
+						color: #93999f;
+					}
+				}
+				.text{
+					line-height: 0.48rem;
+					font-size: 0.32rem;
+					color: #07111b;
+				}
+				.recommend-wrapper{
+					font-size: 0;
+					.i-thumb_up, .recommend-item{
+						display: inline-block;
+						margin-right: 0.213333rem;
+					}
+					.i-thumb_up{
+						font-size: 0.32rem;
+						color: rgb(0, 160, 220);
+					}
+					.recommend-item{
+						padding: 0 0.16rem;
+						margin-top: 0.213333rem;
+						border: 1px solid rgba(7, 17, 27, 0.1);
+						border-radius: 2px;
+						font-size: 0.24rem;
+						color: #93999f;
+					}
+				}
+				.time{
+					position: absolute;
+					top: 0.48rem;
+					right: 0;
+					line-height: 0.32rem;
+					font-size: 0.266667rem;
+					font-weight: 200;
+					color: #93999f;
+				}
+			}
+		}
+	}
+}

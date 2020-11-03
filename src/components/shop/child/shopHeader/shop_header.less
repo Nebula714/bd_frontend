@@ -1,0 +1,236 @@
+@import '../../../../style/mixin.less';
+.shop-header{
+	//position: relative;
+	//position: absolute; 
+	//right: 20%;
+	background: rgba(7, 17, 27, 0.5);
+	color: @white;
+	overflow: hidden;
+	// 提取样式
+	.sign::after{
+		display: inline-block;
+		width: 0.32rem;
+		height: 0.32rem;
+		text-align: center;
+		margin-right: 0.053333rem;
+		border-radius: 0.026667rem;
+		background-color: @white;
+		font-weight: bold;
+	}
+	.decrease::after{
+		content: '减';
+		color: #d02424;
+	}
+	.discount::after{
+		content: '折';
+		color: #06adc3;
+	}
+	.special::after{
+		content: '特';
+		color: #24d0a5;
+	}
+	.invoice::after{
+		content: '票';
+		color: #791717;
+	}
+	.guarantee::after{
+		content: '保';
+		color: #717917;
+	}
+	.backBtn-wrapper{
+		padding: .106667rem .266667rem;
+	}	
+	.content-wrapper{
+		//position: relative;
+		padding: 0rem 0.32rem 0.48rem 0.6rem;
+		font-size: 0;
+		.avatar{
+			display: inline-block;
+			img{
+				width: 1.706667rem;
+				height: 1.706667rem;
+				border-radius: 4px;
+			}
+		}
+		.content{
+			display: inline-block;
+			vertical-align: top;
+			padding-left: 0.426667rem;
+			.brand::before{
+				display: inline-block;
+				vertical-align: top;
+				height: 0.48rem;
+				line-height: .48rem;
+				margin-right: 0.16rem;
+				padding: 0 0.066667rem;
+				content: '品牌';
+				background-color: red;
+				font-weight: 700;
+		    font-size: .3rem;
+			}
+			.title{
+				margin: 0.053333rem 0 0.213333rem;
+				font-size: 0.426667rem;
+				font-weight: bold;
+				line-height: 0.48rem;
+			}
+			.description{
+				line-height: 0.32rem;
+				margin-bottom: 0.266667rem;
+				font-size: 0.32rem;
+				font-weight: 200;
+				span:not(:last-child)::after{
+					content: '/';    
+					margin-left: 0.08rem;
+    			color: #ddd;
+				}
+			}
+			.support{
+				display: inline-block;
+				font-size: 0.266667rem;
+				font-weight: 200;
+				line-height: 0.32rem;
+			}
+		}
+		.support-count{
+			position: absolute;
+			right: 0.32rem;
+			bottom: 0.373333rem;
+			padding: 0 0.213333rem;
+			line-height: 0.64rem;
+			border-radius: 0.373333rem;
+			background-color: rgba(0, 0, 0, 0.2);
+			font-size: 0.266667rem;
+			font-weight: 200;
+		}
+	}
+	.bulletin-wrapper{
+		position: relative;
+		.text-ellipsis;
+		padding: 0 0.586667rem 0 0.32rem;
+		height: 0.746667rem;
+		line-height: 0.746667rem;
+		background: rgba(7, 17, 27, .2);
+		.bulletin-icon{
+			display: inline-block;
+			vertical-align: top;
+			margin-top: 0.213333rem;
+			background-image: url('./bulletin@3x.png');
+			width: 0.586667rem;
+			height: 0.32rem;
+			background-repeat: no-repeat;
+			background-size: 0.586667rem 0.32rem;
+		}
+		.text{
+			font-weight: 200;
+			font-size: 0.266667rem;
+		}
+		.arrow-right{
+			position: absolute;
+			right: 0.32rem;
+			top: 0;
+			font-weight: bold;
+		}
+	}
+	.background{
+		height: 202.8px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		z-index: -1;
+		filter: blur(10px);
+	}
+	.detail{
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 100;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		background: rgba(7, 17, 27, 0.8);
+		backdrop-filter: blur(10px);
+		opacity: 1;
+		&.fade-enter-active, &.fade-leave-active{
+			transition: all 0.5s;
+		}
+		&.fade-enter, &.fade-leave-active{
+			opacity: 0;
+			background: rgba(7, 17, 27, 0);
+		}
+		.detail-wrapper{
+			width: 100%;
+			min-height: 100%;
+			.detail-main{
+				margin-top: 1.706667rem;
+				padding-bottom: 1.706667rem;
+				.name{
+					line-height: 0.426667rem;
+					text-align: center;
+					font-weight: 700;
+					font-size: 0.426667rem;
+				}
+				.star-wrapper{
+					text-align: center;
+					margin-top: 0.426667rem;
+
+				}
+				.title{
+					display: flex;
+					width: 80%;
+					margin: 0.746667rem auto 0.64rem;
+					.line{
+						flex: 1;
+						position: relative;
+						top: -0.16rem;
+						border-bottom: 0.013333rem solid rgba(255, 255, 255, 0.2);
+					}
+					.text{
+						padding: 0 0.32rem;
+						font-size: 0.373333rem;
+						font-weight: 700;
+					}
+				}
+				.supports-list{
+					width: 80%;
+					margin: 0 auto;
+					.support-item{
+						padding: 0 0.32rem;
+						margin-bottom: 0.32rem;
+						&:last-child{
+							margin-bottom: 0;
+						}
+						.sign:after{
+							width: 0.426667rem;
+							height: 0.426667rem;
+						}
+						.text{
+							line-height: 0.426667rem;
+							font-size: 0.32rem;
+						}
+					}
+				}
+				.bulletin{
+					width: 80%;
+					margin: 0 auto;
+					.content{
+						padding: 0 0.32rem;
+						line-height: 0.64rem;
+						font-weight: 200;
+					} 
+				}
+			}
+		}
+		.detail-close{
+			position: relative;
+			width: 0.853333rem;
+			height: 0.853333rem;
+			margin: -1.706667rem auto 0;
+			clear: both;
+			font-size: 0.853333rem;
+			color: rgba(255, 255, 255, 0.5)
+		}
+	}
+}

@@ -1,0 +1,82 @@
+@import '../../style/mixin.less';
+.page-home{
+	padding-bottom: 1.333333rem;
+	width: 94%;
+	float: right;
+	.header{
+		width: 100%;
+		padding: 0.3rem 0.373333rem;
+		background-color: @orange;
+		color: @white;
+		.location{
+			width: 60%;
+			height: 0.92rem;
+			line-height: 0.92rem;
+			font-size: 0.5rem;
+			.text-ellipsis;
+			.text{
+				font-size: .48rem;
+			}
+		}
+		.search-input{
+			width: 100%;
+			height: 0.96rem;
+			margin: 0.2rem 0;
+			text-align: center;
+			border-radius: 0.96rem;
+			box-shadow: 0 0.026667rem 0.066667rem 0 rgba(0,0,0,.2);
+			font-size: 0.346667rem;
+			color: #333;
+		}
+		.hot-word{
+			display: flex;
+			align-items: center;
+		  white-space: nowrap;
+		  overflow-x: auto;
+		  .search-word {
+		  	color: @white;
+		  	&:not(:last-child){
+					margin-right: .4rem;
+				}
+		  } 
+		} 	
+	}
+	.index-slider{
+		height: 4.72rem;
+		background-color: @white;
+		.slide-item{
+		width: 25%;
+	    float: left;
+	    margin-top: .293333rem;
+	    text-align: center;
+	    img {
+	    	width: 1.2rem;
+	    	height: 1.2rem;
+	    }
+	    .title{
+	    	display: block;
+		    margin-top: .133333rem;
+		    color: #666;
+		    font-size: .32rem;
+	    }
+	  }
+	}
+	.index-seller{
+		background-color: @white;
+		.title{
+			line-height: .906667rem;
+			margin-top: .266667rem;
+			padding-left: .4rem;
+			font-weight: 600;
+			font-size: .4rem;
+			text-align: center;
+			color: coral;
+		}
+		.loading-wrapper, .noMore-wrapper{
+			text-align: center;
+	    color: #555;
+	    line-height: 1.066667rem;
+		}
+	}
+}
+
