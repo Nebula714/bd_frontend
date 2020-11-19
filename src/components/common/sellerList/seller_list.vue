@@ -1,7 +1,7 @@
 <style lang="less" src="./seller_list.less" scoped></style>
 <template>
   <ul>
-    <li class="shop-item" v-for="item in sellers" @click="toDetail(item.id)">
+    <li class="shop-item" v-for="item in sellers" @click="toDetail(item)">
       <div class="logo">
         <img :src="item.avatar">
       </div>
@@ -67,9 +67,15 @@ export default {
     }
   },
   methods: {
-    toDetail (id) {
-      console.log('点击seller list item')
-      this.$router.push({path: 'shop', query: { id: id }})
+    toDetail (item) {
+      // 跳转路由传递对象参数
+      console.log('item')
+      console.log(item)
+      // var arr = JSON.stringify(item)
+      // this.$router.push('/shop/' + encodeURIComponent(arr))
+      this.$router.push({path: 'shop', query: {para: item}})
+      // console.log('点击seller list item')
+      // this.$router.push({path: 'shop', query: { id: item.id }, components: item, props: true})
     }
   },
   components: {

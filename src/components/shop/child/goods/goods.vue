@@ -1,150 +1,151 @@
+<style lang="less" src="./goods.less" scoped></style>
 <template>
-  <div>
-    <div>
-        <el-button type="success" icon="el-icon-plus" @click.native="show">添加菜品</el-button>
-        <addmenu :seller="seller" :addOrUpdateVisible="addOrUpdateVisible" @changeShow="showAddOrUpdate" ref="addOrUpdateRef"></addmenu>
+  <div class="goods-wrapper">
+    <!-- 左侧菜单 -->
+    <div class="menu-wrapper" ref="menuWrapper">
+      <ul>
+        <li v-for="(item, index) in goods" class="menu-item" :class="{'current': currentIndex === index}" @click="selectMenu(index, $event)">
+          <span class="text">
+            <span class="sign" :class="signClassMap[item.type]" v-show="item.type>0"></span>{{item.name}}
+          </span>
+        </li>
+      </ul>
     </div>
-    <div>
-      <el-table :data="tableData" style="width: 100%">
-        <el-table-column type="selection" width="55"></el-table-column>
-          <el-table-column
-            prop="id"
-            label="id"
-            width="180">
-          </el-table-column>
-          <el-table-column
-            prop="name"
-            label="菜名"
-            width="180">
-          </el-table-column>
-          <el-table-column
-            prop="price"
-            label="价格"
-            width="180">
-          </el-table-column>
-          <el-table-column
-            prop="description"
-            label="描述"
-            width="180">
-          </el-table-column>
-        <el-table-column label="操作" width="300">
-          <template slot-scope="scope">
-            <!--<el-button
-              size="mini"
-              @click="showEditDialog(scope.row.id)">编辑</el-button>-->
-              <el-button
-              size="mini"
-              @click="showEditDialog(scope.row.id)">编辑</el-button>
-            <el-button
-              size="mini"
-              type="danger"
-              @click="handleDelete(scope.row.id)">删除
-            </el-button>
-          </template>
-        </el-table-column>
-      </el-table>
+    <!-- 右侧食品列表 -->
+    <div class="foods-wrapper" ref="foodsWrapper">
+      <ul>
+        <li class="food-list-hook" v-for="item in goods">
+          <h1 class="title">{{item.name}}</h1>
+          <ul>
+            <li v-for="food in item.foods" class="food-item">
+              <div class="pic">
+                <img :src="food.icon">
+              </div>
+              <div class="content">
+                <h2 class="name">{{food.name}}</h2>
+                <p class="desc" v-if="food.description">{{food.description}}</p>
+                <div class="extra">
+                  <span class="sell-count">月售{{food.sellCount}}份</span>
+                  <span>好评率{{food.rating}}%</span>
+                </div>
+                <div class="price">
+                  <span class="now">{{food.price}}</span>
+                  <span class="old" v-if="food.oldPrice">{{food.oldPrice}}</span>
+                </div>
+                <div class="cartcontrol-wrapper">
+                  <!-- 父组件可以在使用子组件的地方直接用 v-on (或@) 来监听子组件触发的事件。 -->
+                  <cartcontrol @add="addFood" :food="food"></cartcontrol>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </div>
-    <el-dialog v-bind="$attrs" :visible.sync="editDialogVisible" v-on="$listeners" @open="onOpen" @close="onClose" title="修改">
-      <el-form ref="elForm" :model="formData" :rules="rules" size="medium" label-width="100px">
-        <el-form-item label="菜名" prop="name">
-          <el-input v-model="formData.name" placeholder="请输入菜名" clearable :style="{width: '100%'}"></el-input>
-      </el-form-item>
-      <el-form-item label="价格" prop="price">
-        <el-input v-model="formData.price" placeholder="请输入价格" clearable :style="{width: '100%'}"></el-input>
-      </el-form-item>
-      <el-form-item label="描述" prop="description">
-        <el-input v-model="formData.description" placeholder="请输入描述" clearable :style="{width: '100%'}"></el-input>
-      </el-form-item>
-      </el-form>
-      <div slot="footer">
-        <el-button @click="editDialogVisible = false">取消</el-button>
-        <!--<el-button type="primary" @click="handelConfirm">确定</el-button>-->
-        <el-button type="primary" @click="MenuEdit">确定</el-button>
-      </div>
-    </el-dialog>
+    <shopcart ref="shopcart" :select-foods="selectFoods" :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice"></shopcart>
   </div>
 </template>
 <script>
+  import BScroll from 'better-scroll'
+  import shopcart from '../shopcart/shopcart'
+  import cartcontrol from '../cartcontrol/cartcontrol'
+// import { findmenu } from '../../api/menu'
 import Axios from 'axios'
-import addmenu from './addmenu'
-export default {
-  props: ['seller'],
-  data () {
-    return {
-      tableData: [],
-      // 控制新增编辑弹窗的显示与隐藏
-      addOrUpdateVisible: false,
-      editDialogVisible: false,
-      formData: [],
-      editid: null
-    }
-  },
-  components: {
-    addmenu
-  },
-  // http://10.128.30.77:9090/menu/get_food?store_id=1
-  created () {
-    console.log('!!!!!')
-    console.log(this.seller)
-    Axios.get('http://10.128.30.77:9090/menu/get_food?store_id=' + this.seller).then((res) => {
-      this.tableData = res.data
-      console.log(res.data)
-    })
-  },
-  methods: {
-    gettableData () {
-      Axios.get('http://10.128.30.77:9090/menu/get_food?store_id=' + this.seller).then((res) => {
-        this.tableData = []
-        this.tableData = res.data
-        console.log(res.data)
-        console.log('success')
-      })
-    },
-    handleDelete (foodid) {
-      console.log('((((')
-      console.log(this.seller)
-      console.log(foodid)
-      Axios.get('http://10.128.30.77:9090/commodity/delete?store_id=' + this.seller + '&food_id=' + foodid).then((res) => {
-        console.log(res.data)
-        this.gettableData()
-      })
-    },
-    showEditDialog (id) {
-      console.log(id)
-      this.editid = id
-      // this.addOrUpdateVisible = true
-      this.editDialogVisible = true
-    },
-    MenuEdit () {
-      this.$refs['elForm'].validate(async valid => {
-        if (!valid) return
-        // this.close()
-        console.log('######')
-        console.log(this.editid)
-        Axios.get('http://10.128.30.77:9090/commodity/update?food_id=' + this.editid + '&name=' + this.formData.name + '&description=' + this.formData.description + '&price=' + this.formData.price).then((res) => {
-          console.log(res.data)
-        })
-        /* if (res.meta.status !== 201) {
-          console.error('fail')
-        } */
-        this.editDialogVisible = false
-        this.gettableData()
-      })
-    },
-    // 按钮点击事件 显示新增编辑弹窗组件
-    show () {
-      this.addOrUpdateVisible = true
-      // console.log('show')
-    },
-    // 监听 子组件弹窗关闭后触发，有子组件调用
-    showAddOrUpdate (data) {
-      if (data === 'false') {
-        this.addOrUpdateVisible = false
-      } else {
-        this.addOrUpdateVisible = true
+
+  export default {
+    props: ['seller'],
+    data () {
+      /* return {
+        listHeight: [],
+        scrollY: 0
+      } */
+      return {
+        tableData: []
       }
+    },
+    created () {
+      Axios.get('http://10.128.30.77:9090/menu/query_all').then((res) => {
+        this.tableData = res.data
+        console.log(res)
+      })
+      this.signClassMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
+      this.$nextTick(() => {
+        this._initScroll()
+        this._calculateHeight()
+      })
+    },
+    computed: {
+      goods () {
+        return this.seller.goods
+      },
+      currentIndex () {
+        for (let i = 0; i < this.listHeight.length; i++) {
+          let height1 = this.listHeight[i]
+          let height2 = this.listHeight[i + 1]
+          if (this.scrollY >= height1 && this.scrollY < height2) {
+            return i
+          }
+        }
+        return 0
+      },
+      selectFoods () {
+        let foods = []
+        this.goods.forEach((good) => {
+          good.foods.forEach((food) => {
+            if (food.count) {
+              foods.push(food)
+            }
+          })
+        })
+        return foods
+      }
+    },
+    methods: {
+      /* getgoods(){
+        const goods_data= findmenu()
+        console.log(goods_data)
+      }, */
+      _drop (target) {
+        // 异步执行下落动画 优化两个动画同时执行的卡顿
+        this.$nextTick(() => {
+          // 调用子组件shopcart的drop方法
+          this.$refs.shopcart.drop(target)
+        })
+      },
+      _initScroll () {
+        this.menuScroll = new BScroll(this.$refs.menuWrapper, {
+          click: true
+        })
+        this.foodScroll = new BScroll(this.$refs.foodsWrapper, {
+          click: true,
+          probeType: 3
+        })
+        this.foodScroll.on('scroll', (pos) => {
+          this.scrollY = Math.abs(Math.round(pos.y))
+        })
+      },
+      _calculateHeight () {
+        let foodList = this.$refs.foodsWrapper.getElementsByClassName('food-list-hook')
+        let height = 0
+        this.listHeight.push(height)
+        for (var i = 0; i < foodList.length; i++) {
+          let item = foodList[i]
+          height += item.clientHeight
+          this.listHeight.push(height)
+        }
+      },
+      selectMenu (index, event) {
+        let foodList = this.$refs.foodsWrapper.getElementsByClassName('food-list-hook')
+        let el = foodList[index]
+        this.foodScroll.scrollToElement(el, 300)
+      },
+      addFood (target) {
+        // 执行小球下落动画
+        this._drop(target)
+      }
+    },
+    components: {
+      shopcart, cartcontrol
     }
   }
-}
 </script>
-

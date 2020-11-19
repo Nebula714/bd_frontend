@@ -100,7 +100,9 @@
 
       "no-debugger": "off",
 
-      "no-mixed-spaces-and-tabs": "off"
+      "no-mixed-spaces-and-tabs": "off",
+      
+      "indent" :"off"
 
     }
 

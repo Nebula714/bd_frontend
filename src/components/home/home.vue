@@ -146,6 +146,7 @@ import footerNav from '../common/footerNav/footer_nav'
 import sellerList from '../common/sellerList/seller_list'
 // import {findmenu} from '../../api/menu'
 const ERR_OK = 0
+const baseUrl = 'http://10.128.30.77:9090'
 
 export default {
   name: 'home',
@@ -175,7 +176,7 @@ export default {
     window.addEventListener('scroll', this.dispatchLoad, false)
   },
   created () {
-    Axios.get('http://10.128.30.77:9090/store/query_all').then((res) => {
+    Axios.get(baseUrl + '/store/query_all').then((res) => {
       this.sellerListArr = res.data
       console.log(res.data)
     })
@@ -204,7 +205,7 @@ export default {
       })
     }, */
     getSellerList () {
-      Axios.get('http://10.128.30.77:9090/store/query_all').then((res) => {
+      Axios.get(baseUrl + '/store/query_all').then((res) => {
         this.sellerListArr = []
         this.sellerListArr = res.data
         console.log(res.data)

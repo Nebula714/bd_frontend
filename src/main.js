@@ -8,6 +8,10 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import ViewUI from 'view-design'
 import 'view-design/dist/styles/iview.css'
+import API from './router/API'
+
+Vue.prototype.API = API.server
+// Axios.defaults.baseURL = API.baseURL
 
 Vue.config.productionTip = false
 
