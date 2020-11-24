@@ -5,9 +5,9 @@
       <i class="icon i-home"></i>
       <span class="text">首页</span>
     </router-link>
-    <router-link to="/discover">
+    <router-link to="/review">
       <i class="icon i-discover"></i>
-      <span class="text">发现</span>
+      <span class="text">评价</span>
     </router-link>
     <router-link to="/order">
       <i class="icon i-order"></i>

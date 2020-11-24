@@ -35,6 +35,7 @@
 import Axios from 'axios'
 import register from './register'
 import register2 from './register2'
+const baseURL = 'http://10.136.87.229:9090'
 export default {
   components: {
     register, register2
@@ -71,11 +72,20 @@ export default {
       this.$refs['登录'].validate(valid => {
         if (!valid) return
         // TODO 提交表单
-        Axios.get('http://10.128.30.77:9090/user/login?phone=' + this.formData.phone + '&password=' + this.formData.password).then((res) => {
+        Axios.get(baseURL + '/user/login?phone=' + this.formData.phone + '&password=' + this.formData.password).then((res) => {
           console.log(res.data)
-          if (res.data === 'fail') {
+          if (res.data === '账号错误!' || res.data === '密码错误!') {
             this.$message.error(res.data)
           } else {
+            console.log('login success')
+            // html5本地存储
+            Axios.get(baseURL + '/user/query_phone?phone=' + this.formData.phone).then((res1) =>{
+              console.log('login res1')
+              console.log(res1.data)
+              sessionStorage.setItem('identity', 'user')
+              sessionStorage.setItem('user', JSON.stringify(res1.data.id))
+            })
+            // sessionStorage.setItem('user')
             this.$router.push({path: '/home'})
           }
         })
@@ -85,11 +95,15 @@ export default {
       this.$refs['登录'].validate(valid => {
         if (!valid) return
         // TODO 提交表单
-        Axios.get('http://10.128.30.77:9090/store/login?phone=' + this.formData.phone + '&password=' + this.formData.password).then((res) => {
+        Axios.get(baseURL + '/store/login_phone?phone=' + this.formData.phone + '&password=' + this.formData.password).then((res) => {
           console.log(res.data)
-          if (res.data === 'fail') {
+          if (res.data === '账号错误!' || res.data === '密码错误!') {
             this.$message.error(res.data)
           } else {
+            Axios.get(baseURL + '/store/query_p?phone=' + this.formData.phone).then((res1) =>{
+              sessionStorage.setItem('identity', 'store')
+              sessionStorage.setItem('store', JSON.stringify(res1.data.id))
+            })
             this.$router.push({path: '/home'})
           }
         })

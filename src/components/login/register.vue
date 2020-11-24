@@ -118,7 +118,7 @@ export default {
         if (!valid) return
         // this.close()
         console.log('register')
-        Axios.get('http://10.128.30.77:9090/user/register?name=' + this.formData.name + '&phone=' + this.formData.phone + '&age=' + this.formData.age + '&gender=' + this.formData.gender + '&password=' + this.formData.password).then((res) => {
+        Axios.get('http://10.136.87.229:9090/user/register?name=' + this.formData.name + '&phone=' + this.formData.phone + '&age=' + this.formData.age + '&gender=' + this.formData.gender + '&password=' + this.formData.password).then((res) => {
           console.log(res.data)
         })
         /* if (res.meta.status !== 201) {

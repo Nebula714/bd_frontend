@@ -17,7 +17,7 @@
         <div class="desc">另需配送费￥{{deliveryPrice}}元</div>
       </div>
       <div class="con-right" @click.stop.prevent="toPay()">
-        <div class="pay" :class="payClass">{{payDesc}}</div>
+        <div class="pay" :class="payClass" @click="add">{{payDesc}}</div>
       </div>
     </div>
     <!-- 小球动画 -->
@@ -60,8 +60,14 @@
 <script>
   import BScroll from 'better-scroll'
   import cartcontrol from '../cartcontrol/cartcontrol'
+import Axios from 'axios'
+const baseURL = 'http://10.136.87.229:9090'
   export default {
     props: {
+      store: {
+        type: Number,
+        default: 0
+      },
       selectFoods: {
         type: Array,
         default () {
@@ -118,14 +124,15 @@
         return total
       },
       payDesc () {
-        let diff = this.minPrice - this.totalPrice
+        /* let diff = this.minPrice - this.totalPrice
         if (this.totalPrice === 0) {
           return `￥${this.minPrice}起送`
         } else if (this.totalPrice < this.minPrice) {
           return `还差${diff}元起送`
         } else {
-          return '去结算'
-        }
+          return '加入购物车'
+        } */
+        return '加入购物车'
       },
       payClass () {
         if (this.totalPrice < this.minPrice) {
@@ -155,6 +162,24 @@
       }
     },
     methods: {
+      add(){
+        let param=new FormData()
+        param.append('store_id',this.store)
+        console.log(this.store)
+        param.append('customer_id',sessionStorage.getItem('user'))
+        let obj1=JSON.stringify(this.selectFoods)
+        console.log(obj1)
+        let config={
+          headers: {
+            "Content-Type": "multipart/form-data"
+          },
+        }
+        param.append('food',obj1)
+        Axios.post(baseURL+'/order/insert',param,config).then((res)=>{
+        })
+        alert('已成功加入购物车')
+        // this.$router.push({path: 'home'})
+      },
       drop (el) {
         // el 即 拿到cartcontrol的元素
         for (let i = 0; i < this.balls.length; i++) {
@@ -230,7 +255,8 @@
         if (this.totalPrice < this.minPrice) {
           return
         } else {
-          window.alert(`支付${this.totalPrice}元`)
+          //window.alert(`支付${this.totalPrice}元`)
+          
         }
       },
       show () {

@@ -146,7 +146,7 @@ import footerNav from '../common/footerNav/footer_nav'
 import sellerList from '../common/sellerList/seller_list'
 // import {findmenu} from '../../api/menu'
 const ERR_OK = 0
-const baseUrl = 'http://10.128.30.77:9090'
+const baseUrl = 'http://10.136.87.229:9090'
 
 export default {
   name: 'home',

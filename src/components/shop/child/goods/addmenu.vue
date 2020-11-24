@@ -97,7 +97,7 @@ export default {
         // this.close()
         console.log('######')
         console.log(this.seller)
-        Axios.get('http://10.128.30.77:9090/commodity/insert?store_id=' + this.seller + '&name=' + this.formData.name + '&description=' + this.formData.description + '&price=' + this.formData.price).then((res) => {
+        Axios.get('http://10.136.87.229:9090/commodity/insert?store_id=' + this.seller + '&name=' + this.formData.name + '&description=' + this.formData.description + '&price=' + this.formData.price).then((res) => {
           console.log(res.data)
         })
         /* if (res.meta.status !== 201) {

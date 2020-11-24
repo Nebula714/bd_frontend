@@ -19,14 +19,14 @@ export default new Router({
       component: (resolve) => require(['../components/home/home.vue'], resolve) // 懒加载
     },
     {
-      path: '/discover',
-      name: 'Discover',
-      component: (resolve) => require(['../components/discover/discover.vue'], resolve)
+      path: '/review',
+      name: 'review',
+      component: (resolve) => require(['../components/review/review.vue'], resolve)
     },
     {
       path: '/order',
       name: 'Order',
-      component: (resolve) => require(['../components/order/order.vue'], resolve)
+      component: (resolve) => require(['../components/cart/cart1.vue'], resolve)
     },
     {
       path: '/profile',

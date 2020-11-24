@@ -144,7 +144,7 @@ export default {
         if (!valid) return
         // this.close()
         // console.log('register')
-        Axios.get('http://10.128.30.77:9090/store/register?name=' + this.formData.name + '&address=' + this.formData.address + '&type=' + this.formData.type + '&phone=' + this.formData.phone + '&business_on=' + this.formData.business_on + '&business_off=' + this.formData.business_off + '&password=' + this.formData.password).then((res) => {
+        Axios.get('http://10.136.87.229:9090/store/register?name=' + this.formData.name + '&address=' + this.formData.address + '&type=' + this.formData.type + '&phone=' + this.formData.phone + '&business_on=' + this.formData.business_on + '&business_off=' + this.formData.business_off + '&password=' + this.formData.password).then((res) => {
           console.log(res.data)
         })
         /* if (res.meta.status !== 201) {

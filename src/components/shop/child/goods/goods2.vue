@@ -27,7 +27,7 @@
             </li>
           </ul>
     </div>
-    <shopcart ref="shopcart" :select-foods="selectFoods" :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice"></shopcart>
+    <shopcart ref="shopcart" :store="this.seller" :select-foods="selectFoods" :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice"></shopcart>
   </div>
 </template>
 <script>
@@ -35,7 +35,7 @@
   import cartcontrol from '../cartcontrol/cartcontrol'
 // import { findmenu } from '../../api/menu'
   import Axios from 'axios'
-  const baseUrl = 'http://10.128.30.77:9090'
+  const baseUrl = 'http://10.136.87.229:9090'
   export default {
     props: ['seller'],
     data () {

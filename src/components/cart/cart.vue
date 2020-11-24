@@ -1,12 +1,11 @@
 <template>
-  
 <div class="cart">
   <div class="body">
     <div class="tour">
         <a @click="goback" class="tour1"><img src="./back.png" style="height: 26px;width: 20px"></a>
         <p>购物车</p>
          <el-button type="text" class="tour2" @click="open"><i class="btn"></i></el-button>
-        <!-- <a href="javascript:;" class="tour2"><i class="btn"></i></a> -->
+        <a href="javascript:;" class="tour2"><i class="btn"></i></a>
     </div>
         <div class="spxz">
     <div class="tip" v-show="flag">
@@ -21,7 +20,7 @@
         <li v-for="item in selectedGoods.items">
             <ul>
                 <li class="li1"><input type="checkbox" :checked="item.is_selected"  name="box"/></li>
-                <li class="li2"><img :src="item.item.image"  style="width: 60px;height: 60px"/></li>
+                <li class="li2"><img src="F:/study大三/db/my-project/static/images/login_image/login.png"  style="width: 60px;height: 60px"/></li>
                 <li class="li3">
                     <div class="title">{{item.item.title}}</div>
                     <div class="one" style="color: red">￥{{item.item.price}}</div>
@@ -30,7 +29,6 @@
             <!-- v-model="num" -->
             </ul>
         </li>
-       
     </ul>
 </div>
 </div>
@@ -63,8 +61,8 @@
 </template>
 
 <script>
-import VueEvent from "../../common/js/eventVue.js"
-import axios from 'axios'
+import VueEvent from "./eventVue.js"
+import Axios from 'axios'
 import Vue from 'vue'
 export default {
   props:{
@@ -88,7 +86,7 @@ export default {
                 "sellPoint": "索尼4800万超清拍照 / 18个月超长质保 / 骁龙675处理器 / 4000mAh大电量 / 128GB大存储 / 6.3\"水滴屏 / P2i整机防泼溅处理 / 标配18W充电器 / 德国莱茵 TÜV 认证护眼屏",
                 "price": 1599,
                 "num": 178,
-                "image": "http://psic7eu47.bkt.clouddn.com/Fhg0B4KL7nIuE_pjj0TuSRvdoNnD",
+                "image": "F:/study大三/db/my-project/static/images/login_image/login.png",
                 "cid": 1185,
                 "status": null
               },
@@ -104,7 +102,7 @@ export default {
                 "sellPoint": "索尼2400万旗舰自拍 / 潮流镜面渐变色 / 手持超级夜景 / Dual PD 双核对焦 / 7.5mm超薄机身 / 6.26\"小刘海全面屏 / 骁龙660AIE处理器",
                 "price": 1099,
                 "num": 100,
-                "image": "http://psic7eu47.bkt.clouddn.com/FjfG3Zi3eyoIsWYkCBGdjh0DbJ33",
+                "image": "F:/study大三/db/my-project/static/images/login_image/login.png",
                 "cid": 1184,
                 "status": null
               },
@@ -119,28 +117,27 @@ export default {
    }
   },
 methods: {
-      goback(){
-          this.$router.go(-1);
-      },
+  goback(){
+    this.$router.go(-1)
+  },
     
-    selected(){
+    selected () {
 
     } , 
-       check(){
-			var checkbox = document.getElementById('checkbox');
-			checkbox.value==1?checkbox.value=2 : checkbox.value=1;
-			var checkboxs = document.getElementsByName('box');
-			for(var i=0; i<checkboxs.length;i++){
-
-			if(checkbox.value==1){
-				checkboxs[i].checked=false;
-			}else{
-			checkboxs[i].checked=true;
+       check () {
+			var checkbox = document.getElementById('checkbox')
+			checkbox.value == 1? checkbox.value=2 : checkbox.value=1
+			var checkboxs = document.getElementsByName('box')
+			for(var i = 0; i<checkboxs.length; i++) {
+			if(checkbox.value === 1) {
+				checkboxs[i].checked = false;
+			} else {
+			checkboxs[i].checked = true;
 		  	}
       };
    } ,
-     open() {
-        this.$confirm('是否清空购物车?', '提示', {
+    open () {
+      this.$confirm('是否清空购物车?', '提示', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
           type: 'warning',
@@ -175,38 +172,31 @@ methods: {
       }
 },
   
-  mounted(){
+  mounted () {
       //获取购物车列表
-      if(sessionStorage.getItem("username")){
-             this.$axios({
-                url: 'api/api/v1/cart',
-                method: 'get',
-                }) .then(function (response) {
-                    console.log(response);
-                    this.selectedGoods=response.data.items;
-                })
-                .catch(function (error) {
-                    console.log(error);
-                }); 
-     
-      }
-      else{
-          this.flag=true;
-      }
-    
+    /*if(sessionStorage.getItem("username")){
+      this.$axios({
+        url: 'api/api/v1/cart',
+        method: 'get',
+      }) .then(function (response) {
+        console.log(response)
+        this.selectedGoods=response.data.items;
+      }).catch(function (error) {
+          console.log(error)
+      }); 
+    }
+    else {
+      this.flag = true
+    }*/
   },
   computed:{
-   
-    totalPrice(){
-            let total=0;
-            this.selectedGoods.items.forEach((item) => {
-                    total+=item.item.price*item.amount;
-            });
-          
-            return total;
-        },
-    
-    
+    totalPrice () {
+      let total = 0
+        this.selectedGoods.items.forEach((item) => {
+          total += item.item.price * item.amount
+        })
+      return total
+    }
   }
 }
 </script>

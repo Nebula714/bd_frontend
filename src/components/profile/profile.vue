@@ -67,9 +67,9 @@
                     </template>
                     <!--<div>与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；</div>
                     <div>在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。</div>-->
-                    <div>用户昵称</div>
-                    <div>用户身份</div>
-                    <div>用户手机号</div>
+                    <div>用户昵称:{{tableData.name}}</div>
+                    <!--<div>用户身份</div>-->
+                    <div>用户手机号:{{tableData.phone}}</div>
                     <el-button class="edit" type="primary" size="mini" @click="showEdit">修改</el-button>
                   </el-collapse-item>
                 </el-collapse>
@@ -124,9 +124,12 @@
 // import login from "../user/login"
 import footerNav from '../common/footerNav/footer_nav'
 import Edit from './Edit'
+import Axios from 'axios'
+const baseURL = 'http://10.136.87.229:9090'
 export default {
   data () {
     return {
+      tableData: [],
       username: '',
       useridentity: '',
       phone: '',
@@ -137,13 +140,20 @@ export default {
   components: {
     footerNav, Edit
   },
-  mounted () {
+  created () {
+    Axios.get(baseURL + '/user/query_id?id='+ sessionStorage.getItem('user')).then((res)=>{
+      console.log('user center')
+      console.log(res.data)
+      this.tableData=res.data
+    })
+  },
+  /*mounted () {
     // this.$route.query.username=this.username
     if (sessionStorage.getItem('username')) {
       this.username = sessionStorage.getItem('username')
       this.isLogin = true
     }
-  },
+  },*/
   methods: {
     // 登出
     userout () {
