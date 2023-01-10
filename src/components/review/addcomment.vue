@@ -24,7 +24,7 @@ export default {
   inheritAttrs: false,
   components: {},
   props: {
-    food1:{
+    order_id1:{
       type: Number,
       default: null
     },
@@ -35,7 +35,7 @@ export default {
   },
   data() {
     return {
-      nowfood: undefined,
+      order_id: undefined,
       formData: {
         score: 1,
         comment: undefined,
@@ -64,8 +64,9 @@ export default {
   },
   created() {
     console.log('create')
-    console.log(this.food1)
-    this.nowfood=this.food1
+    console.log(this.order_id1)
+    this.order_id=this.order_id1
+    console.log(this.order_id)
   },
   mounted() {},
   methods: {
@@ -91,7 +92,7 @@ export default {
       this.$emit('changeShow', 'false')
     },
     CommentAdd () {
-      console.log(this.nowfood)
+      console.log(this.order_id)
       this.$refs['评论'].validate(async valid => {
         if (!valid) return
         // this.close()
@@ -99,7 +100,7 @@ export default {
         console.log(this.formData.comment)
         console.log(this.formData.score)
         //console.log(this.food1.order_id)
-        Axios.get(baseURL+'/comment/insert?food_id='+this.food+'&customer_id='+sessionStorage.getItem('user')+'&comment='+this.formData.comment+'&score='+this.formData.score).then((res) => {
+        Axios.get(baseURL+'/comment/insert?order_id='+this.order_id+'&comment='+this.formData.comment+'&score='+this.formData.score).then((res) => {
           console.log(res.data)
         })
         /* if (res.meta.status !== 201) {

@@ -23,6 +23,7 @@
 </template>
 <script>
 import Axios from 'axios'
+const baseURL = 'http://10.136.207.156:9090'
 export default {
   inheritAttrs: false,
   components: {},
@@ -97,7 +98,7 @@ export default {
         // this.close()
         console.log('######')
         console.log(this.seller)
-        Axios.get('http://10.136.87.229:9090/commodity/insert?store_id=' + this.seller + '&name=' + this.formData.name + '&description=' + this.formData.description + '&price=' + this.formData.price).then((res) => {
+        Axios.get(baseURL+'/commodity/insert?store_id=' + this.seller + '&name=' + this.formData.name + '&description=' + this.formData.description + '&price=' + this.formData.price).then((res) => {
           console.log(res.data)
         })
         /* if (res.meta.status !== 201) {

@@ -17,9 +17,21 @@
             <li v-for="store in Goods()">
         <!--<h1>点击</h1>-->
               <!--<div class="check"><input type="checkbox" class="checkbox" @click="choose(store)"/></div>-->
+              <div class="class1">
               <h1 class="store">商家:{{store.store_id}}</h1>
+              <div class="comment">
+                <div class="class2">
+                <el-button type="primary" plain size="medium" @click.native="show1(store.order_id)">评价订单</el-button>
+                <addcomment :order_id1="store.order_id" :addOrUpdateVisible="addOrUpdateVisible1" @changeShow="showAddOrUpdate1" ref="addOrUpdateRef"></addcomment>
+                </div>
+                <div class="class2">
+                <el-button type="success" plain size="medium" @click="show2">投诉订单</el-button>
+                <complaint :food2="store" :addOrUpdateVisible="addOrUpdateVisible2" @changeShow="showAddOrUpdate2" ref="addOrUpdateRef"></complaint>
+                </div>
+              </div>
+              </div>
               <ul class="inner">
-                <li v-for="(item,index) in store.commodities" :key="index" class="inner">
+                <li v-for="(item,index) in store.commodities" :key="index" class="inner2">
                   <div class="content">
             <!--<h1 @click="demo(item)">点击!!!</h1>-->
             <!--<div class="li1"><input type="checkbox" :checked="item.is_selected" @click="choose(item.commodity.id,item.commodity.price,item.number)"  name="box"/></div>-->
@@ -33,16 +45,6 @@
                     </div>
                     <div class="number">
                       <span>数量：{{item.number}}件</span>
-                    </div>
-                    <div class="comment">
-                      <el-button type="primary" plain size="medium" @click.native="show1(store.order_id)">评价商品</el-button>
-                      <div>
-                      <addcomment :food1="store.order_id" :addOrUpdateVisible="addOrUpdateVisible1" @changeShow="showAddOrUpdate1" ref="addOrUpdateRef"></addcomment>
-                      </div>
-                      <br>
-                      <br>
-                      <el-button type="success" plain size="medium" @click="show2">投诉商品</el-button>
-                      <complaint :food2="store" :addOrUpdateVisible="addOrUpdateVisible2" @changeShow="showAddOrUpdate2" ref="addOrUpdateRef"></complaint>
                     </div>
                   </div>
                 </div>
@@ -65,7 +67,7 @@ import FooterNav from '../common/footerNav/footer_nav'
 import Axios from 'axios'
 import addcomment from './addcomment'
 import complaint from './complaint'
-const baseURL = 'http://10.136.87.229:9090'
+const baseURL = 'http://10.136.207.156:9090'
 export default {
   name: 'review',
   data () {

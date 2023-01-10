@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<title>Κομπολόγια από κεχριμπάρι - Κομπολόι</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Κομπολόγια. Ηλεκτρονικό κατάστημα κομπολογίων με πλούσια συλλογή από κομπολόγια ποιοτικής κατασκευής και κοσμήματα από κεχριμπάρι και άλλα πολύτιμα αντικείμενα">
+<meta name="keywords" content="κομπολόγια, κομπολόι, κεχριμπάρι, κομπολόγια από κεχριμπάρι, κοσμήματα από κεχριμπάρι, έκθεση κομπολογίων, κατάστημα κομπολογίου, φυλαχτά, γιουσούρι, φατουράν, ελεφαντόδοντο, χάνδρες, πολύτιμες πέτρες">
+<link rel="canonical" href="https://www.kompoloi.com/" />
+<meta name="generator" content="WebIndexer">
+<link rel="shortcut icon" href="/sites/kompoloi/files/favicon.ico">
+<style>
+body {visibility: hidden;}
+.boximage, .slideimage, .fa {display: none;}
+.nav ul {list-style: none;}
+</style>
+<script>
+window.onload = function () {
+var imgDefer = document.getElementsByTagName('img');
+for (var i=0; i<imgDefer.length; i++) {
+if(imgDefer[i].getAttribute('data-src')) {
+imgDefer[i].setAttribute('src',imgDefer[i].getAttribute('data-src'));
+imgDefer[i].removeAttribute('data-src');
+} }
+var bgrDefer = document.getElementsByTagName('div');
+for (var i=0; i<bgrDefer.length; i++) {
+if (matchMedia("(max-width: 700px)").matches) {
+if(bgrDefer[i].getAttribute('data-style3')) {
+bgrDefer[i].setAttribute('style',bgrDefer[i].getAttribute('data-style3'));
+} 
+} else if (matchMedia("(max-width: 1300px)").matches) {
+if(bgrDefer[i].getAttribute('data-style2')) {
+bgrDefer[i].setAttribute('style',bgrDefer[i].getAttribute('data-style2'));
+} 
+} else {
+if(bgrDefer[i].getAttribute('data-style')) {
+bgrDefer[i].setAttribute('style',bgrDefer[i].getAttribute('data-style'));
+} 
+}
+bgrDefer[i].removeAttribute('data-style');
+bgrDefer[i].removeAttribute('data-style2');
+bgrDefer[i].removeAttribute('data-style3');
+}
+};
+</script>
+<link rel="preload" href="/sf/fontawesome/webfonts/fa-solid-900.woff" as="font" type="font/woff" crossorigin="anonymous">
+</head>
+<body>
+<div class="menucontainer"><div class="container menubox">
+<div class="menuboxin"><div class="logo"><a href="." title="" rel="home">
+<img src="/sites/kompoloi/files/noimg.png" data-src="/sites/kompoloi/files/logo.png" alt=" - Το Κεχριμπάρι"></a></div>
+<div class="menuholder">
+<div class="divmenu printno">
+<div class="divmin divmin1"><a href="cart"><span class="fa fa-user iconcart"></span> Login - Ταμείο</a></div><div class="divmin divcartm"><a href="cart" class="linkcart"><span class="iconstyle" title="Καλάθι αγορών"><span class="fa fa-shopping-bag"></span></span> Καλάθι αγορών (0)</a></div><div class="divmin divsearch"><form name="formasearch" method="post" action="search"><label for="search" class="nlabel">Αναζήτηση</label><input type="text" name="search" id="search" placeholder="Αναζήτηση" size="20" class="forms1 formsearch" required><input type="image" name="gosearch" src="/sites/kompoloi/files/search.png" alt="Αναζήτηση" title="Αναζήτηση" class="buttonsearch"></form></div><div class="divmin divmin1"><div class="inlined titlemenu color1"> <span class="fa fa-phone-square color3 iconcart"></span> τηλεφωνικές παραγγελίες 210 3319135       <span class="fa fa-envelope-open-text color3 iconcart"></span> <a href="contact">Επικοινωνία</a> </div></div><div class="divmin divlang"><a href="https://www.kompoloi.com/el/" title="Ελληνικά" class="linkslang llangel"><img src="/sites/kompoloi/files/el.png" alt="Ελληνικά"></a>
+<a href="https://www.kompoloi.com/en/" title="English" class="linkslang llangen"><img src="/sites/kompoloi/files/en.png" alt="English"></a>
+</div><div class="divnavibutton"><button type="button" class="navibutton" data-toggle="collapse" data-target=".nav-collapse">&#x2261;</button></div>
+</div>
+</div>
+</div>
+<div id="divnavbar" class="navbar printno">
+<div class="nav-collapse collapse navbar-main">
+<ul class="nav">
+<li class="navhome"><a href="." class="navactive">Αρχική</a></li>
+<li><a href="katastima">Κατάστημα</a></li>
+<li><a href="istoria-kehribariou">Ιστορία κεχριμπαριού</a></li>
+<li class="dropdown"><a href="#"class="dropdown-toggle">Κομπολόγια <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li class="licat"><a href="kobologia"><span class="licatn">Κομπολόγια</span> » όλα</a></li>
+<li class="dropdown-container">
+<a href="kobologia-palea-syllektika" class="navlinks">Κομπολόγια Παλαιά Συλλεκτικά</a>
+<a href="kobologia-kehribari-heiropoiito" class="navlinks">Κομπολόγια Κεχριμπάρι Χειροποίητο</a>
+<a href="kobologia-kehribari-presaristo" class="navlinks">Κομπολόγια Κεχριμπάρι Πρεσαριστό</a>
+<a href="kobologia-fatouran-palea" class="navlinks">Κομπολόγια Φατουράν Παλαιά</a>
+<a href="kobologia-fatouran-neotera" class="navlinks">Κομπολόγια Φατουράν Νεότερα</a>
+<a href="kobologia-mastihes-sountourous" class="navlinks">Κομπολόγια Μαστίχες / Σούντουρους</a>
+<a href="kobologia-giousouri" class="navlinks">Κομπολόγια Γιούσουρι</a>
+<a href="kobologia-petromata" class="navlinks">Κομπολόγια Πετρώματα</a>
+<a href="kobologia-kokkala" class="navlinks">Κομπολόγια Κόκκαλα</a>
+<a href="kobologia-katalin-santaloz" class="navlinks">Κομπολόγια Καταλίν / Σανταλόζ</a>
+<a href="kobologia-kerata" class="navlinks">Κομπολόγια Κέρατα</a>
+<a href="kobologia-xylina" class="navlinks">Κομπολόγια Ξύλινα</a>
+<a href="kobologia-korali" class="navlinks">Κομπολόγια Κοράλι</a>
+<a href="kobologia-keramika" class="navlinks">Κομπολόγια Κεραμικά</a>
+<a href="kobologia-gia-kyries" class="navlinks">Κομπολογια για Κυριες</a>
+</li>
+</ul>
+</li>
+<li class="dropdown"><a href="#"class="dropdown-toggle">Κοσμήματα <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li class="licat"><a href="kosmimata-kehribari"><span class="licatn">Κοσμήματα</span> » όλα</a></li>
+<li class="dropdown-container">
+<a href="kolie-kehribari" class="navlinks">Κολιέ με κεχριμπαρι</a>
+<a href="vrahiolia-kehribari" class="navlinks">Βραχιόλια</a>
+<a href="dahtylidia-kehribari" class="navlinks">Δαχτυλίδια</a>
+<a href="skoularikia-kehribari" class="navlinks">Σκουλαρίκια κρεμαστα</a>
+<a href="skoularikia-me-clip-kehribari" class="navlinks">Σκουλαρίκια με clip</a>
+<a href="karfitses-kehribari" class="navlinks">Καρφίτσες</a>
+<a href="mentagion-kremasta-kehribari" class="navlinks">Μενταγιόν / Κρεμαστά</a>
+<a href="kardies-kehribari" class="navlinks">Καρδιές</a>
+<a href="maniketokouba-kehribari" class="navlinks">Μανικετόκουμπα / Γραββατοδετες</a>
+<a href="stayroi-kehribari" class="navlinks">Σταυροί</a>
+<a href="kolie-me-kehribari-ke-petromata" class="navlinks">Κολιε με κεχριμπαρι και πετρωματα</a>
+<a href="kolie-me-petromata" class="navlinks">Κολιε με πετρωματα</a>
+<a href="skoularikia-pano-sto-ayti" class="navlinks">Σκουλαρικια πανω στο αυτι</a>
+<a href="asimenies-alysides" class="navlinks">Ασημενιες αλυσιδες</a>
+</li>
+</ul>
+</li>
+<li class="dropdown"><a href="#"class="dropdown-toggle">Αντικείμενα <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li class="licat"><a href="antikeimena-kehribari"><span class="licatn">Αντικείμενα</span> » όλα</a></li>
+<li class="dropdown-container">
+<a href="kehribari-antikeimena" class="navlinks">Αντικείμενα</a>
+<a href="zoakia-heiropoiita-kehribari" class="navlinks">Ζωάκια χειροποίητα/Αντικειμενα</a>
+<a href="kathreftakia-visit-cards-kehribari" class="navlinks">Καθρεφτάκια / Visit cards</a>
+<a href="stylo-kehribari" class="navlinks">Στυλό</a>
+<a href="hartokoptes-kehribari" class="navlinks">Χαρτοκόπτες/Κουταλακια-Πηρουνακια</a>
+<a href="zaria-kokkalakia-mallion-kehribari" class="navlinks">Ζάρια / Κοκκαλάκια μαλλιών</a>
+<a href="eidi-kapnistou-kehribari" class="navlinks">Είδη Καπνιστού</a>
+<a href="brelok-kehribari" class="navlinks">Κλειδοθηκες</a>
+<a href="poma-boukaliou" class="navlinks">Πωμα μπουκαλιου</a>
+<a href="selidodeiktes" class="navlinks">Σελιδοδεικτες</a>
+</li>
+</ul>
+</li>
+<li class="dropdown"><a href="#"class="dropdown-toggle">Γούρια <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li class="licat"><a href="gouria-kehribari"><span class="licatn">Γούρια</span> » όλα</a></li>
+<li class="dropdown-container">
+<a href="gouria-diafora-kehribari" class="navlinks">Γούρια διάφορα</a>
+<a href="gouria-kehribari-asimi" class="navlinks">Γούρια με κεχριμπάρι & ασήμι</a>
+</li>
+</ul>
+</li>
+<li class="dropdown"><a href="#"class="dropdown-toggle">Μπεγλέρια <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li class="licat"><a href="begleria"><span class="licatn">Μπεγλέρια</span> » όλα</a></li>
+<li class="dropdown-container">
+<a href="begleri-heiropoiita-me-kehribari" class="navlinks">Μπεγλέρια κεχριμπαρι χειροποιητα</a>
+<a href="begleria-kehribari" class="navlinks">Μπεγλέρι με πρεσαριστο κεχριμπάρι</a>
+<a href="begleria-diafora-me-asimi" class="navlinks">Μπεγλερια διαφορα με ασημι</a>
+<a href="begleria-diafora-horis-asimi" class="navlinks">Μπεγλερια διαφορα χωρις ασημι</a>
+</li>
+</ul>
+</li>
+<li><a href="prosfores">Προσφορες %</a></li>
+<li class="navilinks navcontact"><a href="contact">Επικοινωνία</a></li></ul>
+</div>
+</div></div></div>
+<div class="headerpos"></div>
+<header id="slideshow" class="carousel slide printno">
+<div class="carousel-inner">
+<div class="item active" style="background-image:url('/sites/kompoloi/files/noimg.png');" data-style="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/1.jpg&nwidth=1900&imgq=60');" data-style2="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/1.jpg&nwidth=1300&imgq=60');" data-style3="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/1.jpg&nwidth=800&imgq=60');">
+</div>
+<div class="item" style="background-image:url('/sites/kompoloi/files/noimg.png');" data-style="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/2.jpg&nwidth=1900&imgq=60');" data-style2="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/2.jpg&nwidth=1300&imgq=60');" data-style3="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/2.jpg&nwidth=800&imgq=60');">
+</div>
+<div class="item" style="background-image:url('/sites/kompoloi/files/noimg.png');" data-style="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/3.jpg&nwidth=1900&imgq=60');" data-style2="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/3.jpg&nwidth=1300&imgq=60');" data-style3="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/3.jpg&nwidth=800&imgq=60');">
+</div>
+<div class="item" style="background-image:url('/sites/kompoloi/files/noimg.png');" data-style="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/4.jpg&nwidth=1900&imgq=60');" data-style2="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/4.jpg&nwidth=1300&imgq=60');" data-style3="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/4.jpg&nwidth=800&imgq=60');">
+</div>
+<div class="item" style="background-image:url('/sites/kompoloi/files/noimg.png');" data-style="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/5.jpg&nwidth=1900&imgq=60');" data-style2="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/5.jpg&nwidth=1300&imgq=60');" data-style3="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/5.jpg&nwidth=800&imgq=60');">
+</div>
+<div class="item" style="background-image:url('/sites/kompoloi/files/noimg.png');" data-style="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/6.jpg&nwidth=1900&imgq=60');" data-style2="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/6.jpg&nwidth=1300&imgq=60');" data-style3="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/6.jpg&nwidth=800&imgq=60');">
+</div>
+<div class="item" style="background-image:url('/sites/kompoloi/files/noimg.png');" data-style="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/7.jpg&nwidth=1900&imgq=60');" data-style2="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/7.jpg&nwidth=1300&imgq=60');" data-style3="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/7.jpg&nwidth=800&imgq=60');">
+</div>
+<div class="item" style="background-image:url('/sites/kompoloi/files/noimg.png');" data-style="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/8.jpg&nwidth=1900&imgq=60');" data-style2="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/8.jpg&nwidth=1300&imgq=60');" data-style3="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/8.jpg&nwidth=800&imgq=60');">
+</div>
+<div class="item" style="background-image:url('/sites/kompoloi/files/noimg.png');" data-style="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/9.jpg&nwidth=1900&imgq=60');" data-style2="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/9.jpg&nwidth=1300&imgq=60');" data-style3="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/9.jpg&nwidth=800&imgq=60');">
+</div>
+<div class="item" style="background-image:url('/sites/kompoloi/files/noimg.png');" data-style="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/10.jpg&nwidth=1900&imgq=60');" data-style2="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/10.jpg&nwidth=1300&imgq=60');" data-style3="background-image:url('includes/image.php?image=./sites/kompoloi/files/photos/10.jpg&nwidth=800&imgq=60');">
+</div>
+</div>
+<div class="carousel-control"><a class="ccontrols ccleft" href="#slideshow" data-slide="prev">&lsaquo;</a><a class="ccontrols ccright" href="#slideshow" data-slide="next">&rsaquo;</a></div></header>
+
+<div class="container"><div class="contentstyle contenthome"><div class="slidemodel width100"><img src="/sites/kompoloi/files/shadow.png" class="width100" alt=""></div><div class="divpages"><div class="pages">
+<h1>Κομπολόγια & κοσμήματα από κεχριμπάρι</h1></div></div>
+<div>
+<div class="wp4 bgrinfo0 bgrinfost0 bgrinfoimg1 boxinfo">
+<div class="content">
+<div class="boximage imgstyle1">
+<a href="/sites/kompoloi/files/items/105.jpg" data-imageviewer="1"><img src="/sites/kompoloi/files/noimg.png" data-src="includes/image.php?image=./sites/kompoloi/files/items/105.jpg&amp;nwidth=700" alt="Στο Αττικό Κέντρο Κομπολογιού θα βρείτε: - Το Κεχριμπάρι" title="Στο Αττικό Κέντρο Κομπολογιού θα βρείτε:" class="img-info"></a>
+</div>
+<div class="boxinfotext2">
+<div class="titles1"><h2>Στο Αττικό Κέντρο Κομπολογιού θα βρείτε:</h2></div>
+<img class="margright10"src="/sites/kompoloi/files/icon.png" alt="" /> Συλλογή κομπολογιών από διάφορα υλικά (κεχριμπάρι, φατουραν, μαστίχες κτλ.)<br />  <img class="margright10"src="/sites/kompoloi/files/icon.png" alt="" /> Συλλογή κοσμημάτων από κεχριμπάρι (κολιέ, δαχτυλίδια, βραχιόλια κτλ)<br /> <img class="margright10"src="/sites/kompoloi/files/icon.png" alt="" /> Συλλογή αντικειμένων από κεχριμπάρι (μπαστούνια, χαρτοκόπτες κτλ) <br /> <img class="margright10"src="/sites/kompoloi/files/icon.png" alt="" /> Συλλογή από μπεγλέρια διαφόρων υλικών<br /> <img class="margright10"src="/sites/kompoloi/files/icon.png" alt="" /> Είδη καπνιστού (ταμπακιέρες, πίπες) <br /> <img class="margright10"src="/sites/kompoloi/files/icon.png" alt="" /> Είδη δώρων (διακοσμητικά, visitcards) <br /> <img class="margright10"src="/sites/kompoloi/files/icon.png" alt="" /> Σκακιέρα</div>
+</div>
+</div>
+</div>
+<div>
+<div class="wp4 bgrinfo2 bgrinfost0 textni boxinfo">
+<div class="content">
+<div class="boxinfotext2">
+<div class="titles1 titlesni"><h3>Online αγορές - Κάντε δικό σας ένα πανέμορφο & μοναδικό κομμάτι κεχριμπαριού!</h3></div>
+<div class="boxes4"> <div class="pad10 padbottom0"><img class="img-icat" src="/sites/kompoloi/files/p1.jpg" alt="Κομπολόγια" /> <div class="titlesboxes"><a href="kobologia">Κομπολόγια</a></div> <div class="text1 pad10">Διαφορετικων υλικων, μεγεθους, βαρους και ομορφιας με αξια, φτιαγμενα απο τεχνιτες με μερακι που ακολουθουν τη παραδοση του τοπου τους. </div> </div> </div> <div class="boxes4"> <div class="pad10 padbottom0"><img class="img-icat" src="/sites/kompoloi/files/p2.jpg" alt="Κοσμήματα" /> <div class="titlesboxes"><a href="kosmimata-kehribari">Κοσμήματα</a></div> <div class="text1 pad10">Μοναδικα, φτιαγμενα απο κεχριμπαρι, "παντρεμενα" με ασημι και χωρις, με ημιπολυτιμους λιθους οπως κοραλι, τυρκουαζ, lapis lazoulis κτλ, σχεδιασμενα και εκτελεσμενα σε πολυ ομορφο design, μοντερνα και κλασσικα. </div> </div> </div> <div class="boxes4"> <div class="pad10 padbottom0"><img class="img-icat" src="/sites/kompoloi/files/p3.jpg" alt="Αντικείμενα" /> <div class="titlesboxes"><a href="antikeimena-kehribari">Αντικείμενα</a></div> <div class="text1 pad10">Υπεροχα και μοναδικα φτιαγμενα απο κεχριμπαρι. </div> </div> </div> <div class="boxes4"> <div class="pad10 padbottom0"><img class="img-icat" src="/sites/kompoloi/files/p4.jpg" alt="Είδη δώρων" /> <div class="titlesboxes"><a href="begleria">Είδη δώρων</a></div> <div class="text1 pad10">Κάντε πολύτιμα δώρα στους αγαπημένους σας! </div> </div> </div> <div class="cleared"></div></div>
+</div>
+</div>
+</div>
+<div>
+<div class="wp4 bgrinfo0 bgrinfost0 textni boxinfo">
+<div class="content">
+<div class="divscript"><div class="centered marg30"><img src="/sites/kompoloi/files/icon.png" alt="" /></div></div></div>
+</div>
+</div>
+<div class="parallax parbgr607">
+<div class="divparallax  bgrinfost0">
+</div></div>
+<div>
+</div>
+<div class="cleared"></div>
+</div>
+</div>
+<div class="menudcontainer printno margtop0 bgrpard"
+>
+<div class="container menudstyle relative printno"><div class="content menudin centered"><div class="divshare">SHARE<a href="https://www.facebook.com/sharer.php?u=https://www.kompoloi.com/" target="_blank" rel="nofollow"><img src="/sites/kompoloi/files/social/facebook.png" alt="Facebook" class="img-share sh1"></a>
+<a href="https://www.twitter.com/share?url=https://www.kompoloi.com/" target="_blank" rel="nofollow"><img src="/sites/kompoloi/files/social/twitter.png" alt="Twitter" class="img-share sh2"></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.kompoloi.com/" target="_blank" rel="nofollow"><img src="/sites/kompoloi/files/social/linkedin.png" alt="LinkedIn" class="img-share sh4"></a>
+<a href="https://www.pinterest.com/pin/create/link/?url=https://www.kompoloi.com/" target="_blank" rel="nofollow"><img src="/sites/kompoloi/files/social/pinterest.png" alt="Pinterest" class="img-share sh5"></a>
+<a href="https://www.reddit.com/submit?url=https://www.kompoloi.com/" target="_blank" rel="nofollow"><img src="/sites/kompoloi/files/social/reddit.png" alt="Reddit" class="img-share sh7"></a>
+<a href="mailto:?subject=kompoloi.com&amp;body=www.kompoloi.com/"><img src="/sites/kompoloi/files/social/email.png" alt="Email" class="img-share sh-email"></a>
+&nbsp; &nbsp;
+<a href="javascript:window.print()">ΕΚΤΥΠΩΣΗ <img src="/sites/kompoloi/files/print.png" alt="Print page" class="img-share sh-print"></a></div></div></div>
+</div>
+<div class="menudcontainer mdc">
+<div class="container menudbgr"><div class="content menudcontent">
+<div class="boxdown boxdown2"> <div class="boxmap"> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1572.5435333511468!2d23.732160183748988!3d37.97509737192908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bd3dc6142fab%3A0x271b1f88571967c6!2zzqTOvyDOms61z4fPgc65zrzPgM6xz4HOuSAtIFRoZSBBbWJlciBzaG9w!5e0!3m2!1sel!2sus!4v1473940274328" frameborder="0" class="iframed" allowfullscreen></iframe> </div> <img src="/sites/kompoloi/files/shop.jpg" alt="Amber shop" /> </div><div class="boxdown boxcontact"><div class="boxdownin">
+<div class="titlesdown"><a href="contact">Επικοινωνήστε μαζί μας</a></div>
+<hr>
+<div class="titlesdown1">Το Κεχριμπάρι</div> 
+<div class="padtop5">
+Βουλής 35 Σύνταγμα - Αθήνα 10557 <br /> Τηλ. / Fax <a href="tel:2103319135" class="tel">210 3319135</a> <br /> <a href="https://www.kompoloi.com">www.kompoloi.com</a><br /> <a href="https://www.amber.gr">www.amber.gr</a> <div class="divmail"><a href="mailto:info@kompoloi.com,info@amber.gr?subject=kompoloi.com" class="linkmail">info@kompoloi.com,info@amber.gr</a></div>
+</div>
+</div></div>
+<div class="boxdown boxsocial printno"><div class="boxdownin">
+<div class="titlesdown">Social media</div>
+<hr>
+<div class="divsocial">
+<a href="https://www.facebook.com/AttikoKentroKompologiouToKechrimpari" target="_blank" rel="nofollow"><img src="/sites/kompoloi/files/noimg.png" data-src="/sites/kompoloi/files/links/1.png" class="img-social facebook" alt="facebook"></a>
+</div>
+<div class="divsocial">
+<a href="https://www.instagram.com/ToKexrimbari/" target="_blank" rel="nofollow"><img src="/sites/kompoloi/files/noimg.png" data-src="/sites/kompoloi/files/links/12.png" class="img-social instagram" alt="instagram"></a>
+</div>
+</div></div>
+<div class="boxdown boxdownw printno"><div class="boxdownin">
+<div class="titlesdown titlesdownc">Πληροφορίες για την αγορά</div>
+<hr>
+<div class="divdowntc"></div>
+<a href="oroi" class="linksdown linksdown2">Όροι παραγγελίας</a>
+<a href="eggyisi-tropoi-pliromis" class="linksdown linksdown2">Εγγύηση & τρόποι πληρωμής</a>
+<a href="metafora-paradosi" class="linksdown linksdown2">Μεταφορά & παράδοση</a>
+<a href="privacy" class="linksdown linksdown2">Ασφάλεια</a>
+<a href="politiki-cookies" class="linksdown linksdown2">Πολιτική Cookies</a>
+</div></div>
+</div></div>
+<div class="menudstyle2">
+<div class="divauto"><strong>GDPR</strong> <span class="fa fa-exclamation-circle iconstyle color3"></span> Αυτό το website χρησιμοποιεί cookies για καλύτερη απόδοση.  Με τη χρήση του ιστότοπου, αποδέχεστε την πολιτική μας για την <a href="/privacy">Προστασία προσωπικών δεδομένων</a>.<br /> <a href="/privacy" class="button marg10">Διαβάστε περισσότερα</a> <a href="/deletem" class="button marg10">Διαγραφή στοιχείων σας</a></div>
+<div class="content">
+<div class="linkf printno"><a href="https://www.ellasanweb.gr" target="_blank" rel="nofollow">© Website by Ellasan</a></div>
+<div class="divarrow printno"><a href="#" class="arrowtop">&#xfe3f;<span class="hide">top</span></a></div>
+</div>
+</div>
+</div>
+<script src="sf/jquery.js"></script><a href="new" class="animbutton bgrcolor3"> <span class="fa fa-tags padtop10"></span><br> Νέες παραλαβές</a><script>
+$(document).ready(function(){
+$('.carousel').carousel({
+interval: 200 // speed
+})
+});
+</script>
+<link rel="preload" href="styles.css" as="style"><link href="styles.css" rel="stylesheet">
+<script defer src="sf/sitescripts.js"></script>
+<link rel="preload" href="sf/fontawesome/css/all.min.css" as="style"><link href="sf/fontawesome/css/all.min.css" rel="stylesheet">
+</body>
+</html>

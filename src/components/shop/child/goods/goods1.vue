@@ -1,42 +1,49 @@
-<style lang="less" src="./goods1.less" scoped></style>
 <template>
   <div>
-    <div class="goods-menu">
+    <div>
         <el-button type="success" icon="el-icon-plus" @click.native="show">添加菜品</el-button>
         <addmenu :seller="seller" :addOrUpdateVisible="addOrUpdateVisible" @changeShow="showAddOrUpdate" ref="addOrUpdateRef"></addmenu>
     </div>
-    <div class="all">
-      <!--<goodsList v-if="tableData.length" :goods="tableData"></goodsList>-->
-      <!--<div class="cartcontrol-wrapper">-->
-        <!-- 父组件可以在使用子组件的地方直接用 v-on (或@) 来监听子组件触发的事件。 -->
-        <!--<cartcontrol @add="addFood" :food="food"></cartcontrol>
-      </div>-->
-      <ul>
-        <li v-for="item in tableData">
-            <div class="line-wrapper">
-                <div class="logo">
-                    <img src="/static/images/slider-pic/slider-pic4.jpeg">
-                </div>
-                <div class="name">
-                    <h3>{{item.name}}</h3>
-                </div>
-                <div class="price">
-                    <span>{{item.price}}</span>
-                </div>
-            </div>
-            <div class="content">
-              <div class="description">
-                <span>菜品描述 {{item.description}}</span>
-              </div>
-              <div class="cartcontrol-wrapper">
-                <!-- 父组件可以在使用子组件的地方直接用 v-on (或@) 来监听子组件触发的事件。 -->
-                <cartcontrol @add="addFood" :food="item"></cartcontrol>
-              </div>
-            </div>
-        </li>
-    </ul>
+    <div>
+      <el-table :data="tableData" style="width: 100%">
+        <el-table-column type="selection" width="55"></el-table-column>
+          <el-table-column
+            prop="id"
+            label="id"
+            width="180">
+          </el-table-column>
+          <el-table-column
+            prop="name"
+            label="菜名"
+            width="180">
+          </el-table-column>
+          <el-table-column
+            prop="price"
+            label="价格"
+            width="180">
+          </el-table-column>
+          <el-table-column
+            prop="description"
+            label="描述"
+            width="180">
+          </el-table-column>
+        <el-table-column label="操作" width="300">
+          <template slot-scope="scope">
+            <!--<el-button
+              size="mini"
+              @click="showEditDialog(scope.row.id)">编辑</el-button>-->
+              <el-button
+              size="mini"
+              @click="showEditDialog(scope.row.id)">编辑</el-button>
+            <el-button
+              size="mini"
+              type="danger"
+              @click="handleDelete(scope.row.id)">删除
+            </el-button>
+          </template>
+        </el-table-column>
+      </el-table>
     </div>
-    <shopcart ref="shopcart" :select-foods="selectFoods" :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice"></shopcart>
     <el-dialog v-bind="$attrs" :visible.sync="editDialogVisible" v-on="$listeners" @open="onOpen" @close="onClose" title="修改">
       <el-form ref="elForm" :model="formData" :rules="rules" size="medium" label-width="100px">
         <el-form-item label="菜名" prop="name">
@@ -60,9 +67,7 @@
 <script>
 import Axios from 'axios'
 import addmenu from './addmenu'
-import cartcontrol from '../cartcontrol/cartcontrol'
-import shopcart from '../shopcart/shopcart'
-import goodsList from './goods_list'
+const baseURL = 'http://10.136.207.156:9090'
 export default {
   props: ['seller'],
   data () {
@@ -72,24 +77,24 @@ export default {
       addOrUpdateVisible: false,
       editDialogVisible: false,
       formData: [],
-      editid: null
+      editid: null,
+      inject: ['reload']
     }
   },
   components: {
-    addmenu, cartcontrol, goodsList, shopcart
+    addmenu
   },
-  // http://10.128.30.77:9090/menu/get_food?store_id=1
   created () {
     console.log('!!!!!')
     console.log(this.seller)
-    Axios.get('http://10.136.87.229:9090/menu/get_food?store_id=' + this.seller).then((res) => {
+    Axios.get(baseURL+'/menu/get_food?store_id=' + this.seller).then((res) => {
       this.tableData = res.data
       console.log(res.data)
     })
   },
   methods: {
     gettableData () {
-      Axios.get('http://10.136.87.229:9090/menu/get_food?store_id=' + this.seller).then((res) => {
+      Axios.get(baseURL+'/menu/get_food?store_id=' + this.seller).then((res) => {
         this.tableData = []
         this.tableData = res.data
         console.log(res.data)
@@ -100,9 +105,8 @@ export default {
       console.log('((((')
       console.log(this.seller)
       console.log(foodid)
-      Axios.get('http://10.136.87.229:9090/commodity/delete?store_id=' + this.seller + '&food_id=' + foodid).then((res) => {
+      Axios.get(baseURL+'/commodity/delete?store_id=' + this.seller + '&food_id=' + foodid).then((res) => {
         console.log(res.data)
-        this.gettableData()
       })
     },
     showEditDialog (id) {
@@ -117,14 +121,14 @@ export default {
         // this.close()
         console.log('######')
         console.log(this.editid)
-        Axios.get('http://10.136.87.229:9090/commodity/update?food_id=' + this.editid + '&name=' + this.formData.name + '&description=' + this.formData.description + '&price=' + this.formData.price).then((res) => {
+        Axios.get(baseURL+'/commodity/update?food_id=' + this.editid + '&name=' + this.formData.name + '&description=' + this.formData.description + '&price=' + this.formData.price).then((res) => {
           console.log(res.data)
         })
         /* if (res.meta.status !== 201) {
           console.error('fail')
         } */
         this.editDialogVisible = false
-        this.gettableData()
+        // this.gettableData()
       })
     },
     // 按钮点击事件 显示新增编辑弹窗组件
@@ -139,18 +143,8 @@ export default {
       } else {
         this.addOrUpdateVisible = true
       }
-    },
-    _drop (target) {
-      // 异步执行下落动画 优化两个动画同时执行的卡顿
-      this.$nextTick(() => {
-        // 调用子组件shopcart的drop方法
-        this.$refs.shopcart.drop(target)
-      })
-    },
-    addFood (target) {
-      // 执行小球下落动画
-      this._drop(target)
     }
   }
 }
 </script>
+

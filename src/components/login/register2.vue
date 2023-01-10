@@ -2,6 +2,9 @@
   <div>
     <el-dialog v-bind="$attrs" :visible.sync="showDialog2" v-on="$listeners" @open="onOpen" @close="onClose" title="商家注册">
       <el-form ref="登录" :model="formData" :rules="rules" size="medium" label-width="100px">
+        <el-form-item label="图片链接" prop="photo">
+          <el-input v-model="formData.photo" placeholder="请输入图片链接" clearable :style="{width: '100%'}"></el-input>
+        </el-form-item>
         <el-form-item label="店名" prop="name">
           <el-input v-model="formData.name" placeholder="请输入店名" clearable :style="{width: '100%'}"></el-input>
         </el-form-item>
@@ -43,6 +46,7 @@
 </template>
 <script>
 import Axios from 'axios'
+const baseURL = 'http://10.136.207.156:9090'
 export default {
   inheritAttrs: false,
   components: {},
@@ -56,6 +60,7 @@ export default {
     return {
       showDialog2: false,
       formData: {
+        photo: undefined,
         name: undefined,
         address: undefined,
         type: undefined,
@@ -144,7 +149,7 @@ export default {
         if (!valid) return
         // this.close()
         // console.log('register')
-        Axios.get('http://10.136.87.229:9090/store/register?name=' + this.formData.name + '&address=' + this.formData.address + '&type=' + this.formData.type + '&phone=' + this.formData.phone + '&business_on=' + this.formData.business_on + '&business_off=' + this.formData.business_off + '&password=' + this.formData.password).then((res) => {
+        Axios.get(baseURL+'/store/register?name=' + this.formData.name + '&address=' + this.formData.address + '&type=' + this.formData.type + '&phone=' + this.formData.phone + '&business_on=' + this.formData.business_on + '&business_off=' + this.formData.business_off + '&password=' + this.formData.password+'&photo='+encodeURIComponent(this.formData.photo)).then((res) => {
           console.log(res.data)
         })
         /* if (res.meta.status !== 201) {
@@ -153,7 +158,18 @@ export default {
         this.close()
         // this.$emit('change', null);
       })
-    }
+    },
+    photoBeforeUpload(file) {
+      let isRightSize = file.size / 1024 / 1024 < 2
+      if (!isRightSize) {
+        this.$message.error('文件大小超过 2MB')
+      }
+      let isAccept = new RegExp('image/*').test(file.type)
+      if (!isAccept) {
+        this.$message.error('应该选择image/*类型的文件')
+      }
+      return isRightSize && isAccept
+    },
   }
 }
 

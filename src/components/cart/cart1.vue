@@ -24,13 +24,13 @@
       <li v-for="store in Goods()">
         <!--<h1>点击</h1>-->
         <div class="check"><input type="checkbox" class="checkbox" @click="choose(store)"/></div>
-        <h1 class="store">商家:{{store.store_id}}</h1>
+        <h1 class="store">商家:{{store.store_name}}</h1>
         <ul class="inner">
           <li v-for="item in store.commodities" class="inner">
             <div class="content">
             <!--<h1 @click="demo(item)">点击!!!</h1>-->
             <!--<div class="li1"><input type="checkbox" :checked="item.is_selected" @click="choose(item.commodity.id,item.commodity.price,item.number)"  name="box"/></div>-->
-            <div class="li2"><img src="F:\study大三\db\my-project\static\images\slider-pic\slider-pic11.jpeg"  style="width: 60px;height: 60px"/></div>
+            <div class="li2"><img :src="item.commodity.photo"  style="width: 100px;height: 100px"/></div>
             <div class="li3">
               <div class="title">
                 <span>{{item.commodity.name}}</span>
@@ -61,7 +61,7 @@
 import footerNav from '../common/footerNav/footer_nav'
 import Axios from 'axios'
 import qs from 'qs'
-const baseURL = 'http://10.136.87.229:9090'
+const baseURL = 'http://10.136.207.156:9090'
 export default {
   name: 'cart',
   data () {

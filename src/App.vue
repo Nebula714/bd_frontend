@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <transition name="router-fade" mode="out-in">
-      <router-view></router-view>
+      <router-view v-if="isRouterAlive"></router-view>
     </transition>
     <loading v-if="isLoading"></loading>
   </div>
@@ -11,6 +11,24 @@
   import loading from './components/common/loading/loading'
   export default {
     name: 'app',
+    provide(){
+      return{
+        reload:this.reload
+      }
+    },
+    data(){
+      return {
+        isRouterAlive:true,
+      }
+    },
+    methods:{
+      reload(){
+        this.isRouterAlive = false;
+        this.$nextTick(function () {
+          this.isRouterAlive = true;
+        })
+      }
+    },
     computed: {
       isLoading () {
         return this.$store.getters.getLoading

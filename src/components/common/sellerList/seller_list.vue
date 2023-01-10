@@ -3,7 +3,7 @@
   <ul>
     <li class="shop-item" v-for="item in sellers" @click="toDetail(item)">
       <div class="logo">
-        <img :src="item.avatar">
+        <img :src="item.photo" style="width: 100px;height: 100px"/>
       </div>
       <div class="main">
         <section class="line-wrapper">
@@ -35,10 +35,10 @@
             <span class="rate-score">{{item.score}}</span>
             <!--<span>月售{{item.sellCount}}单</span>-->
           </div>
-          <!--<div class="deliveryWrap">
-            <span class="delivery" v-if="item.zhun">准时达</span>
-            <span class="delivery type" v-if="item.is_fengniao">蜂鸟专送</span>
-          </div>-->
+          <div class="deliveryWrap">
+            <span class="delivery">营业时间{{item.business_on}}-{{item.business_off}}</span>
+            <!--<span class="delivery type"></span>-->
+          </div>
         </section>
         <!--<section class="line-wrapper">
           <div class="moneylimit">

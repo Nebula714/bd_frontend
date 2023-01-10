@@ -6,7 +6,7 @@
           <ul>
             <li v-for="food in tableData" class="food-item">
               <div class="pic">
-                <img src="/static/images/slider-pic/slider-pic4.jpeg">
+                <img :src="food.photo">
               </div>
               <div class="content">
                 <h2 class="name">{{food.name}}</h2>
@@ -35,7 +35,7 @@
   import cartcontrol from '../cartcontrol/cartcontrol'
 // import { findmenu } from '../../api/menu'
   import Axios from 'axios'
-  const baseUrl = 'http://10.136.87.229:9090'
+  const baseURL = 'http://10.136.207.156:9090'
   export default {
     props: ['seller'],
     data () {
@@ -46,7 +46,7 @@
     created () {
       console.log('!!!!!')
       console.log(this.seller)
-      Axios.get(baseUrl + '/menu/get_food?store_id=' + this.seller).then((res) => {
+      Axios.get(baseURL + '/menu/get_food?store_id=' + this.seller).then((res) => {
         this.tableData = res.data
         console.log(res.data)
       })
@@ -64,7 +64,7 @@
     },
     methods: {
       gettableData () {
-        Axios.get(baseUrl + '/menu/get_food?store_id=' + this.seller).then((res) => {
+        Axios.get(baseURL + '/menu/get_food?store_id=' + this.seller).then((res) => {
           this.tableData = []
           this.tableData = res.data
           console.log(res.data)

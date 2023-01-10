@@ -1,0 +1,32 @@
+.shop-wrapper{
+  position: absolute;
+  width: 94%;
+  right: 0;
+  .tab{
+    display: flex;
+    width: 100%;
+    line-height: 1.066667rem;
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 0.013333rem solid #ddd;
+    .tab-item{
+      flex: 1;
+      font-size: 0.373333rem;
+      color: rgb(77, 85, 93);
+      .active{
+        position: relative;
+        color: #3190e8;
+        &:after{
+          content: "";
+          position: absolute;
+          bottom: -.16rem;
+          left: -.066667rem;
+          right: -.066667rem;
+          height: .053333rem;
+          background-color: #3190e8;
+          border-radius: .04rem;
+        }
+      }
+    }
+  }
+}

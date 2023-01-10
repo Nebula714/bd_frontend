@@ -13,10 +13,10 @@
       <i class="icon i-order"></i>
       <span class="text">订单</span>
     </router-link>
-    <router-link to="/profile">
-      <i class="icon i-my"></i>
-      <span class="text">我的</span>
-    </router-link>
+    <div>
+      <i class="icon i-my" @click="gotoprofile"></i>
+      <span class="text" @click="gotoprofile">我的</span>
+    </div>
   </div>
 </template>
 
@@ -25,6 +25,16 @@ export default {
   name: 'footer',
   data () {
     return {}
+  },
+  methods: {
+    gotoprofile(){
+      if(sessionStorage.getItem('identity')==='user'){
+        this.$router.push({path: 'profile'})
+      }
+      else {
+        this.$router.push({path: 'storeprofile'})
+      }
+    }
   }
 }
 </script>

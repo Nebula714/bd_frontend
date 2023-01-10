@@ -15,7 +15,7 @@
           </el-radio-group>
         </el-form-item>
         <el-form-item label="手机号" prop="phone">
-          <el-input v-model="formData.phone" placeholder="请输入手机号" clearable
+          <el-input v-model="formData.phone" placeholder="请输入手机号" clearable disabled="true"
             prefix-icon='el-icon-phone-outline' :style="{width: '100%'}"></el-input>
         </el-form-item>
         <el-form-item label="密码" prop="password">
@@ -32,13 +32,18 @@
 </template>
 <script>
 import Axios from 'axios'
+const baseURL = 'http://10.136.207.156:9090'
 export default {
+  inject:['reload'],
   inheritAttrs: false,
   components: {},
   props: {
     addOrUpdateVisible: {
       type: Boolean,
       default: false
+    },
+    info:{
+      type: []
     }
   },
   data () {
@@ -91,10 +96,26 @@ export default {
   watch: {
     // 监听 addOrUpdateVisible 改变
     addOrUpdateVisible (oldVal, newVal) {
+      this.formData.name=this.info.name
+      this.formData.age=this.info.age
+      if(this.info.gender==='1'){
+        this.formData.gender=1
+      }
+      else if(this.info.gender==='2'){
+        this.formData.gender=2
+      }
+      this.formData.phone=this.info.phone
+      this.formData.password=this.info.password
       this.showDialog = this.addOrUpdateVisible
     }
   },
-  created () {},
+  created () {
+    this.formData.name=this.info.name
+    this.formData.age=this.info.age
+    //this.formData.gender=this.info.gender
+    //this.formData.phone=this.info.phone
+    //this.formData.password=this.info.password
+  },
   mounted () {},
   methods: {
     onOpen () {},
@@ -113,13 +134,14 @@ export default {
       })
     },
     Register () {
-      console.log('&name=' + this.formData.name + '&phone=' + this.formData.phone + '&age=' + this.formData.age + '&gender=' + this.formData.gender + '&password=' + this.formData.password)
+      console.log(this.info)
       this.$refs['elForm'].validate(async valid => {
         if (!valid) return
         // this.close()
         console.log('register')
-        Axios.get('http://10.128.30.77:9090/user/register?name=' + this.formData.name + '&phone=' + this.formData.phone + '&age=' + this.formData.age + '&gender=' + this.formData.gender + '&password=' + this.formData.password).then((res) => {
+        Axios.get(baseURL+'/user/update?id='+this.info.id+'&name=' + this.formData.name + '&phone=' + this.formData.phone + '&age=' + this.formData.age + '&gender=' + this.formData.gender + '&password=' + this.formData.password).then((res) => {
           console.log(res.data)
+          this.reload()
         })
         /* if (res.meta.status !== 201) {
           console.error('fail')

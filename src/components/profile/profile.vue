@@ -12,12 +12,13 @@
         </div>
         <div class="my-info">
             <div class="my-info-background" style="background-color:rgb(255,228,181); -webkit-filter:blur(0px)"></div>
-            <img class="my-avatar" src="./touxiang.jpg">
+            <img class="my-avatar" src="/static/images/login_image/login.png">
             <span class="name" v-show="isLogin">{{username}}</span>
             <span class="my-vip"  style="background:none">
-                <!--<router-link v-show="!isLogin" to="/login">登陆/</router-link>
-                <a @click="userout">登出</a>
-                <router-link to="/register">注册</router-link>-->
+                <!--<router-link v-show="!isLogin" to="/login">登陆/</router-link>-->
+                <!--<a @click="userout">登出</a>-->
+                <el-button type="warning" round icon="el-icon-caret-right" @click="userout">登出</el-button>
+                <!--<router-link to="/register">注册</router-link>-->
             </span>
              <!-- <router-view :login="login"></router-view> -->
         </div>
@@ -65,19 +66,20 @@
                       <i class="aui-list-cell-fl"><img src="./icon-n-1.png"></i>
                       <div class="aui-list-cell-cn">我的信息</div>
                     </template>
-                    <!--<div>与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；</div>
-                    <div>在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。</div>-->
                     <div>用户昵称:{{tableData.name}}</div>
                     <!--<div>用户身份</div>-->
                     <div>用户手机号:{{tableData.phone}}</div>
+                    <div>用户年龄:{{tableData.age}}</div>
+                    <div>性别:{{gender(tableData.gender)}}</div>
                     <el-button class="edit" type="primary" size="mini" @click="showEdit">修改</el-button>
                   </el-collapse-item>
                 </el-collapse>
+                <el-link type="primary" class="my_store" v-if="is_store" @click="gotostore">进入我的店铺</el-link>
               </a>
                
                 <a href="javascript:;" class="aui-list-cell">
                   <div class="aui-list-cell-fl"><img src="./icon-n-3.png"></div>
-                  <div class="aui-list-cell-cn">我的订单</div>
+                  <div class="aui-list-cell-cn" @click="toorder">我的订单</div>
                   <div class="aui-list-cell-fr"></div>
                 </a>
                
@@ -116,7 +118,7 @@
     </div>
   </div>
   <footerNav></footerNav>
-  <Edit :addOrUpdateVisible="addOrUpdateVisible" @changeShow="showAddOrUpdate" ref="addOrUpdateRef"></Edit>
+  <Edit :info="tableData" :addOrUpdateVisible="addOrUpdateVisible" @changeShow="showAddOrUpdate" ref="addOrUpdateRef"></Edit>
 </div>
 </template>
 
@@ -125,7 +127,7 @@
 import footerNav from '../common/footerNav/footer_nav'
 import Edit from './Edit'
 import Axios from 'axios'
-const baseURL = 'http://10.136.87.229:9090'
+const baseURL = 'http://10.136.207.156:9090'
 export default {
   data () {
     return {
@@ -134,7 +136,8 @@ export default {
       useridentity: '',
       phone: '',
       isLogin: false,
-      addOrUpdateVisible: false
+      addOrUpdateVisible: false,
+      is_store: false
     }
   },
   components: {
@@ -146,6 +149,9 @@ export default {
       console.log(res.data)
       this.tableData=res.data
     })
+    if(sessionStorage.getItem('identity')=== 'store'){
+      this.is_store=true
+    }
   },
   /*mounted () {
     // this.$route.query.username=this.username
@@ -159,6 +165,7 @@ export default {
     userout () {
     // sessionStorage.removeItem(username);
       sessionStorage.clear() // 清除 sessionStorage 对象所有的项。
+       this.$router.push({path: '/'})
     },
     showEdit () {
       this.addOrUpdateVisible = true
@@ -168,6 +175,20 @@ export default {
         this.addOrUpdateVisible = false
       } else {
         this.addOrUpdateVisible = true
+      }
+    },
+    gotostore(){
+      this.$router.push({path: 'myshop', query: {para: sessionStorage.getItem('store')}})
+    },
+    toorder(){
+      this.$router.push({path: 'order'})
+    },
+    gender(a){
+      if(a==='2'){
+        return '女'
+      }
+      else{
+        return '男'
       }
     }
   },
@@ -461,5 +482,10 @@ icon, .my-car-shortcut .img-icon {
   bottom: 5%;
 }
 
+.my_store{
+  position: relative;
+  margin-left: 73%; 
+  color: rgb(250, 207, 143);
+}
 </style>
 

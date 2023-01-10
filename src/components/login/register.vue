@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-dialog v-bind="$attrs" :visible.sync="showDialog" v-on="$listeners" @open="onOpen" @close="onClose" title="注册">
+    <el-dialog v-bind="$attrs" :visible.sync="showDialog" v-on="$listeners" @open="onOpen" @close="onClose" title="用户注册">
       <el-form ref="elForm" :model="formData" :rules="rules" size="medium" label-width="100px">
         <el-form-item label="昵称" prop="name">
           <el-input v-model="formData.name" placeholder="请输入昵称" clearable :style="{width: '100%'}"></el-input>
@@ -32,6 +32,7 @@
 </template>
 <script>
 import Axios from 'axios'
+const baseURL = 'http://10.136.207.156:9090'
 export default {
   inheritAttrs: false,
   components: {},
@@ -118,7 +119,7 @@ export default {
         if (!valid) return
         // this.close()
         console.log('register')
-        Axios.get('http://10.136.87.229:9090/user/register?name=' + this.formData.name + '&phone=' + this.formData.phone + '&age=' + this.formData.age + '&gender=' + this.formData.gender + '&password=' + this.formData.password).then((res) => {
+        Axios.get(baseURL+'/user/register?name=' + this.formData.name + '&phone=' + this.formData.phone + '&age=' + this.formData.age + '&gender=' + this.formData.gender + '&password=' + this.formData.password).then((res) => {
           console.log(res.data)
         })
         /* if (res.meta.status !== 201) {

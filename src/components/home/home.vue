@@ -6,14 +6,32 @@
         <span>北京航空航天大学学院路校区</span>
       </div>
       <!-- 搜索 -->
-      <router-link to="/search">
+      <!--<router-link to="/search">
         <input type="text" class="search-input" placeholder="搜索商家、商品">
-      </router-link>
+      </router-link>-->
+      <div>
+        <el-input placeholder="请输入内容" v-model="input" class="searchClass">
+          <div slot="prepend">
+            <div class="centerClass">
+              <el-select v-model="select" placeholder="请选择" style="width: 90px">
+                <el-option label="餐厅" value="1"></el-option>
+                <el-option label="订单" value="2"></el-option>
+                <el-option label="用户" value="3"></el-option>
+              </el-select>
+            </div>
+          <div class="centerClass">
+          <div class="line"></div>
+          </div>
+        </div>
+        <el-button slot="append" icon="el-icon-search" @click="search('input')"></el-button>
+        </el-input>
+      </div>
+
       <!-- 热搜词 -->
       <div class="hot-word">
-        <router-link class="search-word" v-for="item in hotWords" :to="'/search/' + item.search_word" :key="item.search_word">
+        <div class="search-word" v-for="item in hotWords" :key="item.search_word" @click="search(item.title)">
           <span>{{ item.title }}</span>
-        </router-link>
+        </div>
       </div>
     </header>
     <!-- 首页 slider 导航 -->
@@ -22,13 +40,13 @@
         <Swipe-item>
           <router-link to="/search/浪漫西餐">
             <div class="slide-item">
-              <img src="/static/images/slider-pic/xican.jpg" alt="美食">
+              <img src="/static/images/slider-pic/slider-pic1.jpeg" alt="美食">
               <span class="title">浪漫西餐</span>
             </div>
           </router-link>
           <router-link to="/search/甜品饮品">
             <div class="slide-item">
-              <img src="/static/images/slider-pic/tianpin.jpg" alt="甜品饮品">
+              <img src="/static/images/slider-pic/slider-pic2.jpeg" alt="甜品饮品">
               <span class="title">甜品饮品</span>
             </div>
           </router-link>
@@ -146,7 +164,7 @@ import footerNav from '../common/footerNav/footer_nav'
 import sellerList from '../common/sellerList/seller_list'
 // import {findmenu} from '../../api/menu'
 const ERR_OK = 0
-const baseUrl = 'http://10.136.87.229:9090'
+const baseUrl = 'http://10.136.207.156:9090'
 
 export default {
   name: 'home',
@@ -157,7 +175,8 @@ export default {
       sellerListArr: [],
       isLoadingMore: false, // score中的加载更多
       loadMore: false, // 列表底部的加载更多
-      noMore: false
+      noMore: false,
+      input: ''
     }
   },
   mounted () {
@@ -187,6 +206,20 @@ export default {
     ])
   },
   methods: {
+    search(a){
+      if(a==='input'){
+      Axios.get(baseUrl+'/store/fuzzy_query?word='+this.input).then((res)=>{
+        this.sellerListArr=res.data
+        console.log(res.data)
+      })
+      }
+      else{
+        Axios.get(baseUrl+'/store/fuzzy_query?word='+a).then((res)=>{
+        this.sellerListArr=res.data
+        console.log(res.data)
+      })
+      }
+    },
     getHotWords () {
       Axios.get('/api/getHotWords').then(response => {
         if (response.data.errno === ERR_OK) {

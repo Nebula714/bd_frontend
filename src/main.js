@@ -11,11 +11,14 @@ import 'view-design/dist/styles/iview.css'
 import API from './router/API'
 import VueCookies from 'vue-cookies'
 import qs from 'qs'
+import moment from 'moment'
 
 Vue.prototype.API = API.server
 // Axios.defaults.baseURL = API.baseURL
 
 Vue.config.productionTip = false
+
+Vue.prototype.$moment = moment
 
 /* eslint-disable no-new */
 new Vue({
